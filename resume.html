@@ -1,171 +1,18 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Résumé of Nripdev Singh, Senior Software Engineer at Accolite and Technical Consultant on the Morgan Stanley account.">
-  <title>Nripdev Singh · Résumé</title>
-  <style>
-    :root { color-scheme: light; --ink: #182331; --muted: #536171; --rule: #d8dfe6; --accent: #21465a; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: #eef1f4; color: var(--ink); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-    .toolbar { max-width: 850px; margin: 24px auto 12px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .toolbar p { margin: 0; color: var(--muted); font-size: 13px; }
-    button { border: 1px solid var(--accent); border-radius: 4px; padding: 10px 16px; background: var(--accent); color: white; font: inherit; font-weight: 600; cursor: pointer; }
-    button:hover { background: #16384b; }
-    button:focus-visible, a:focus-visible { outline: 3px solid #1876ac; outline-offset: 4px; }
-    main { max-width: 850px; margin: 0 auto 32px; padding: 42px 48px 38px; background: white; box-shadow: 0 3px 22px #18233112; }
-    header { padding-bottom: 15px; border-bottom: 2px solid var(--accent); }
-    h1 { margin: 0 0 3px; font-size: 32px; line-height: 1.15; letter-spacing: -0.7px; }
-    .headline { margin: 0 0 8px; font-size: 15px; font-weight: 600; color: var(--accent); }
-    address { display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 3px; font-style: normal; font-size: 13px; }
-    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    section { margin-top: 17px; }
-    h2 { margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--rule); color: var(--accent); font-size: 11.5px; line-height: 1.35; text-transform: uppercase; letter-spacing: 1.6px; }
-    h3 { margin: 0; font-size: 14px; line-height: 1.35; }
-    .entry + .entry { margin-top: 12px; }
-    .entry-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-    .dates { flex-shrink: 0; color: var(--muted); font-size: 12px; white-space: nowrap; }
-    .subline { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; }
-    .stack { margin: 3px 0 4px; color: var(--muted); font-size: 12px; }
-    ul { margin: 5px 0 0; padding-left: 17px; }
-    li { margin-top: 3px; padding-left: 2px; }
-    p { margin: 5px 0 0; }
-    .skills { display: grid; grid-template-columns: 122px 1fr; column-gap: 10px; row-gap: 4px; margin: 0; }
-    .skills dt { font-weight: 600; }
-    .skills dd { margin: 0; }
-    .coursework { font-size: 12.5px; }
-    @media (max-width: 640px) {
-      body { background: white; font-size: 13px; }
-      .toolbar { margin-top: 14px; padding: 0 20px; }
-      .toolbar p { max-width: 165px; font-size: 12px; }
-      main { margin-bottom: 0; padding: 28px 22px; box-shadow: none; }
-      h1 { font-size: 29px; }
-      .headline { font-size: 14px; }
-      .entry-header { flex-direction: column; align-items: flex-start; gap: 2px; }
-      .skills { grid-template-columns: 1fr; row-gap: 2px; }
-      .skills dd { margin-bottom: 5px; }
-    }
-    @page { size: auto; margin: 11mm 12mm; }
-    @media print {
-      body { background: white; font-size: 9.2pt; line-height: 1.28; }
-      .toolbar { display: none; }
-      main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
-      header { padding-bottom: 9px; }
-      h1 { font-size: 25pt; }
-      .headline { margin-bottom: 5px; font-size: 10.5pt; }
-      address { font-size: 9pt; }
-      section { margin-top: 10px; }
-      h2 { margin-bottom: 5px; padding-bottom: 3px; font-size: 8.3pt; letter-spacing: 1.2px; break-after: avoid; }
-      h3 { font-size: 9.6pt; }
-      .dates, .stack { font-size: 8.2pt; }
-      .subline, .coursework { font-size: 8.7pt; }
-      .entry + .entry { margin-top: 8px; }
-      .entry-header { flex-direction: row; align-items: baseline; gap: 12px; break-after: avoid; }
-      .entry { break-inside: avoid; }
-      ul { margin-top: 3px; }
-      li { margin-top: 2px; }
-      .skills { grid-template-columns: 112px 1fr; row-gap: 3px; }
-      .skills dd { margin: 0; }
-      a { text-decoration: none; }
-      p, li { orphans: 2; widows: 2; }
-    }
-  </style>
-</head>
-<body>
-  <div class="toolbar" aria-label="Résumé actions">
-    <p>Use your browser’s print dialog to print or save as PDF.</p>
-    <button type="button" onclick="window.print()">Print / Save PDF</button>
-  </div>
-  <main>
-    <header>
-      <h1>Nripdev Singh</h1>
-      <p class="headline">Senior Software Engineer · Technical Consultant</p>
-      <address aria-label="Contact details">
-        <a href="mailto:nripdevsaggu316@gmail.com">nripdevsaggu316@gmail.com</a>
-        <a href="tel:+919988252405">+91 99882 52405</a>
-        <a href="https://www.linkedin.com/in/nripdev-singh/">linkedin.com/in/nripdev-singh</a>
-        <a href="https://github.com/nripsaggu10">github.com/nripsaggu10</a>
-      </address>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Résumé of Nripdev Singh, Senior Software Engineer at Accolite and Technical Consultant on the Morgan Stanley account."
+    />
+    <title>Nripdev Singh · Résumé</title>
 
-    <section aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
-      <article class="entry">
-        <div class="entry-header">
-          <h3>Accolite · Senior Software Engineer</h3>
-          <span class="dates">Dec 2024 – Present</span>
-        </div>
-        <p class="subline">Technical Consultant, Morgan Stanley account · Cyber Data Risk &amp; Resilience Division · Bengaluru</p>
-        <p class="stack">Java · Spring · Angular · Python · SQL · XML · Git</p>
-        <ul>
-          <li>Resolve bugs and release features in two-week sprints focused on security compliance.</li>
-          <li>Built a Timeline feature for security design changes, with fast data loading and estimated times adjusted to EST.</li>
-          <li>Developed a Spring email feature for secure communication between internal services.</li>
-          <li>Migrated AngularJS to Angular while maintaining backend compatibility, improving performance by 35%.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <article class="entry">
-        <div class="entry-header">
-          <h3><a href="https://github.com/nripsaggu10/querywear">QueryWear · Natural Language to SQL System</a></h3>
-          <span class="dates">Sep 2024 – Jan 2025</span>
-        </div>
-        <p class="stack">Google PaLM · LangChain · Streamlit · Hugging Face · ChromaDB · MySQL</p>
-        <ul>
-          <li>Built a natural language interface for database queries; boosted query accuracy by 89% through Hugging Face and ChromaDB similarity search.</li>
-          <li>Improved SQL translation accuracy by 55% using few-shot learning and increased database efficiency by 20%.</li>
-        </ul>
-      </article>
-      <article class="entry">
-        <div class="entry-header">
-          <h3><a href="https://github.com/nripsaggu10/Healthfirst">HealthFirst · Healthcare Platform</a></h3>
-          <span class="dates">Mar – Oct 2023</span>
-        </div>
-        <p class="stack">Python · C++ · React.js · MySQL</p>
-        <ul>
-          <li>Developed backend and machine learning components for a team capstone; patient retrieval APIs improved system efficiency by 40%.</li>
-          <li>Built a disease prediction chatbot using Random Forest and Decision Trees, improving diagnostic accuracy by 18%.</li>
-          <li>Applied indexing and caching to improve data retrieval speed by 40%.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section aria-labelledby="skills-title">
-      <h2 id="skills-title">Technical Skills</h2>
-      <dl class="skills">
-        <dt>Languages</dt><dd>Java, Python, C++, TypeScript, SQL</dd>
-        <dt>Frameworks &amp; AI</dt><dd>Spring, Angular, React.js, LangChain, Hugging Face, TensorFlow, NLP, Random Forest, Decision Trees</dd>
-        <dt>Data &amp; Tools</dt><dd>MySQL, PostgreSQL, Excel, Git, Postman, APIs, Linux, Cybersecurity</dd>
-      </dl>
-    </section>
-
-    <section aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <article class="entry">
-        <div class="entry-header">
-          <h3>Thapar Institute of Engineering and Technology</h3>
-          <span class="dates">Sep 2020 – Jun 2024</span>
-        </div>
-        <p class="subline">Bachelor’s in Electronics and Computer Engineering · Patiala · CGPA: 7.25/10</p>
-        <p class="coursework"><strong>Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Operating Systems, Data Science, Database Management Systems, Deep Learning, Blockchain, Cryptography, Corporate Finance.</p>
-      </article>
-    </section>
-
-    <section aria-labelledby="achievement-title">
-      <h2 id="achievement-title">Achievement</h2>
-      <article class="entry">
-        <div class="entry-header">
-          <h3>IdeaThon Runner-Up</h3>
-          <span class="dates">Mar 2023</span>
-        </div>
-        <p class="subline">Standard Chartered Finance &amp; Technology Connect</p>
-        <p>Developed a blockchain pooled collateral smart-contract system for 100+ users to collectively secure loans and proportionally distribute interest. Used Proof of Work consensus for secure transactions and decentralized interest distribution.</p>
-      </article>
-    </section>
-  </main>
-</body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/resume.tsx"></script>
+  </body>
 </html>

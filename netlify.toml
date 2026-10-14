@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Preserve the clean résumé URL already used by Netlify Pretty URLs.
+[[redirects]]
+  from = "/resume"
+  to = "/resume.html"
+  status = 200
+
+[[redirects]]
+  from = "/resume/"
+  to = "/resume.html"
+  status = 200
