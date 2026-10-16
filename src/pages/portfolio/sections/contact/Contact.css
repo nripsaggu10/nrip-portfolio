@@ -1,0 +1,90 @@
+.contact-section {
+  max-width: 650px;
+  text-align: center;
+  padding: 115px 0 130px;
+}
+.contact-section .eyebrow {
+  font-size: 11px;
+}
+.contact-section h2 {
+  font-size: 53px;
+  letter-spacing: -2px;
+  margin: 21px 0 23px;
+  font-weight: 650;
+}
+.contact-section > p:not(.eyebrow) {
+  max-width: 495px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.85;
+}
+.contact-cta {
+  margin: 35px 0 29px;
+}
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font: 11px var(--mono);
+  color: var(--muted);
+}
+.contact-email > a:hover {
+  color: var(--mint);
+}
+#copy-email {
+  background: none;
+  border: 0;
+  color: var(--text);
+  padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
+}
+#copy-email:hover {
+  color: var(--mint);
+}
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+  margin-top: 22px;
+  font: 10px var(--mono);
+}
+.contact-socials a {
+  padding: 10px 0;
+}
+.contact-socials a:hover {
+  color: var(--mint);
+}
+@media (max-width: 800px) {
+  .contact-section {
+    padding: 85px 0;
+  }
+  .contact-section h2 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 75px 0 85px;
+  }
+  .contact-section h2 {
+    font-size: 38px;
+    letter-spacing: -1.7px;
+    line-height: 1.2;
+  }
+  .contact-section > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  .contact-section .eyebrow {
+    font-size: 10px;
+  }
+  .contact-email {
+    font-size: 10px;
+    gap: 3px;
+  }
+  .contact-socials {
+    gap: 24px;
+    font-size: 10px;
+  }
+}

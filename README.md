@@ -33,15 +33,18 @@ Run `npm test` to open Google Chrome with the Vitest browser dashboard. The test
 
 The browser configuration uses Vitest's preview provider and Testing Library interactions. Dialog and observer APIs use the real browser implementations. The dashboard lists each passing or failing test. `npm run test:run` retains the fast, one-time jsdom run for pre-commit checks and CI without opening a browser.
 
-## Source map
+## Project organization
 
-- `src/App.tsx` composes the portfolio.
-- `src/components/` contains sections, illustrations, navigation, and dialogs.
-- `src/data/projects.ts` supplies project cards and dialog content from one typed source.
-- `src/hooks/` contains scroll observation and clipboard feedback.
-- `src/styles/portfolio.css` retains the original responsive design.
-- `src/components/Resume.tsx` and `src/styles/resume.css` define the printable résumé.
-- `public/favicon.svg` is the initials mark.
+See [the full folder tree and parent–child component map](docs/PROJECT_STRUCTURE.md).
+
+- `src/app/`: application composition.
+- `src/layouts/portfolio-layout/`: header, footer, and social rails.
+- `src/pages/portfolio/sections/`: hero, about, experience, projects, and contact.
+- `src/pages/portfolio/sections/projects/querywear/` and `healthfirst/`: project-specific data and artwork.
+- `src/pages/resume/`: printable résumé and its child components.
+- `src/shared/`: reusable reveal/toast components, profile data, and foundational styles.
+- Each visual component owns its `.tsx` markup and `.css`; interactive behavior lives in adjacent `.ts` hooks. Tests are placed beside the feature they cover.
+- `src/main.tsx` and `src/resume.tsx` remain the two entry points. `index.html` and `resume.html` remain the HTML shells.
 
 ## Deployment
 

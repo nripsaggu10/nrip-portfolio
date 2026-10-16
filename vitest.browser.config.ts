@@ -11,7 +11,7 @@ export default defineConfig({
     watch: { usePolling: true, interval: 300 },
   },
   test: {
-    include: ["src/test/**/*.test.tsx"],
+    include: ["src/**/*.test.tsx"],
     setupFiles: ["./src/test/setup.browser.ts"],
     restoreMocks: true,
     watch: true,
