@@ -1,0 +1,80 @@
+.achievement {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  background: linear-gradient(110deg, #112b3b40, transparent);
+  padding: 34px;
+  margin-top: 0;
+}
+.award-icon {
+  width: 41px;
+  flex-shrink: 0;
+  color: var(--mint);
+  padding-top: 5px;
+}
+.award-icon svg {
+  width: 100%;
+}
+.achievement-copy {
+  max-width: 660px;
+}
+.achievement .eyebrow {
+  font-size: 9px;
+  margin-bottom: 10px;
+}
+.achievement h3 {
+  font-size: 23px;
+  margin-bottom: 6px;
+  font-weight: 550;
+}
+.award-source {
+  font: 11px/1.8 var(--mono);
+  color: #b3c0d6;
+  margin-bottom: 15px;
+}
+.achievement-copy > p:last-child {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.award-year {
+  margin-left: auto;
+  font-size: 49px;
+  color: #2c4159;
+  font-weight: 600;
+  line-height: 1;
+}
+@media (max-width: 800px) {
+  .achievement {
+    padding: 25px;
+    gap: 20px;
+  }
+  .award-year {
+    display: none;
+  }
+  .achievement h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .achievement {
+    padding: 23px 20px;
+    gap: 14px;
+  }
+  .award-icon {
+    width: 29px;
+  }
+  .achievement .eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+  .achievement h3 {
+    font-size: 19px;
+  }
+  .award-source {
+    font-size: 9px;
+  }
+  .achievement-copy > p:last-child {
+    font-size: 13px;
+  }
+}

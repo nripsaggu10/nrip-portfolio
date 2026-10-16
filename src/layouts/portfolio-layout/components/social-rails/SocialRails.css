@@ -1,0 +1,67 @@
+.social-rail,
+.email-rail {
+  position: fixed;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.social-rail {
+  left: 47px;
+  flex-direction: column;
+}
+.social-rail a {
+  display: block;
+  padding: 4px;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+.social-rail svg {
+  width: 21px;
+  height: 21px;
+}
+.social-rail a:hover {
+  transform: translateY(-4px);
+  color: var(--mint);
+}
+.social-rail:after,
+.email-rail:after {
+  content: "";
+  height: 95px;
+  width: 1px;
+  background: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+.email-rail {
+  right: 47px;
+  flex-direction: column;
+}
+.email-rail a {
+  writing-mode: vertical-rl;
+  font: 11px var(--mono);
+  letter-spacing: 1px;
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+.email-rail a:hover {
+  color: var(--mint);
+  transform: translateY(-4px);
+}
+@media (max-width: 1100px) {
+  .social-rail {
+    left: 27px;
+  }
+  .email-rail {
+    right: 27px;
+  }
+}
+@media (max-width: 800px) {
+  .social-rail,
+  .email-rail {
+    display: none;
+  }
+}

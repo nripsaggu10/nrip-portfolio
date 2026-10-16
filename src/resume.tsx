@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Resume from "./components/Resume";
-import "./styles/resume.css";
+import Resume from "./pages/resume/ResumePage";
+import "./pages/resume/ResumePage.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

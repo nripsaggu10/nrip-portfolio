@@ -1,0 +1,236 @@
+.featured-project {
+  display: grid;
+  grid-template-columns: 1.13fr 1fr;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  margin-bottom: 110px;
+}
+.project-art {
+  border: 1px solid #27485a;
+  padding: 20px 26px 38px;
+  min-height: 383px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #10313f;
+}
+.art-caption {
+  display: flex;
+  justify-content: space-between;
+  color: #91c5c5;
+  font: 8px var(--mono);
+  letter-spacing: 1px;
+  margin-bottom: 26px;
+}
+.art-caption span:last-child {
+  font-size: 6px;
+  align-self: center;
+  letter-spacing: 0.5px;
+  color: #77aaa9;
+}
+.mini-label {
+  font: 7px var(--mono);
+  letter-spacing: 1px;
+  color: #7da69f;
+}
+.project-copy {
+  position: relative;
+  z-index: 2;
+  text-align: right;
+  margin-left: -38px;
+}
+.project-copy .eyebrow {
+  font-size: 10px;
+}
+.project-copy h3 {
+  font-size: 33px;
+  letter-spacing: -0.7px;
+  margin: 9px 0;
+}
+.project-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 23px;
+}
+.project-description {
+  background: var(--panel);
+  padding: 25px 29px;
+  box-shadow: 0 10px 30px #020c1b33;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.project-result {
+  border-top: 1px solid #263c59;
+  margin-top: 18px;
+  padding-top: 14px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.project-result strong {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--mint);
+  margin-right: 6px;
+}
+.project-tech {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 7px 15px;
+  margin: 21px 0 18px;
+  font: 10px/1.5 var(--mono);
+  color: #a1b0c9;
+}
+.project-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+  font: 11px var(--mono);
+}
+.project-links a,
+.project-links button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  transition: color 0.2s;
+}
+.project-links button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--text);
+  font: inherit;
+}
+.project-links a:hover,
+.project-links button:hover {
+  color: var(--mint);
+}
+.project-links span {
+  font-size: 18px;
+  color: var(--mint);
+}
+.reverse .project-art {
+  grid-column: 2;
+  grid-row: 1;
+}
+.reverse .project-copy {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left;
+  margin-left: 0;
+  margin-right: -38px;
+}
+.reverse .project-tech,
+.reverse .project-links {
+  justify-content: flex-start;
+}
+@media (max-width: 1100px) {
+  .project-art {
+    padding: 17px 18px 29px;
+    min-height: 355px;
+  }
+  .project-description {
+    padding: 22px;
+  }
+  .project-tech {
+    font-size: 9px;
+    gap: 8px 11px;
+  }
+  .project-copy h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 800px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 65px;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  .project-art {
+    min-height: 360px;
+    padding: 20px 40px 30px;
+  }
+  .project-copy,
+  .reverse .project-copy {
+    margin: 0;
+    text-align: left;
+    padding: 28px;
+    background: var(--panel);
+    border: 1px solid #273f58;
+    border-top: 0;
+  }
+  .project-description {
+    box-shadow: none;
+    padding: 0;
+    background: transparent;
+    font-size: 15px;
+  }
+  .project-copy h3 {
+    font-size: 30px;
+  }
+  .project-subtitle {
+    margin-bottom: 20px;
+  }
+  .project-result {
+    margin-top: 18px;
+  }
+  .project-tech,
+  .project-links {
+    justify-content: flex-start;
+  }
+  .project-copy .eyebrow {
+    font-size: 9px;
+  }
+  .reverse .project-art,
+  .reverse .project-copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+@media (max-width: 600px) {
+  .project-art {
+    padding: 16px 18px 23px;
+    min-height: 320px;
+  }
+  .art-caption {
+    font-size: 7px;
+    margin-bottom: 19px;
+  }
+  .art-caption span:last-child {
+    font-size: 5px;
+  }
+  .project-copy,
+  .reverse .project-copy {
+    padding: 24px 21px;
+  }
+  .project-copy h3 {
+    font-size: 29px;
+  }
+  .project-description {
+    font-size: 14px;
+  }
+  .project-links {
+    gap: 22px;
+    font-size: 10px;
+  }
+  .project-tech {
+    font-size: 9px;
+  }
+  .project-result {
+    font-size: 10px;
+  }
+  .project-result strong {
+    font-size: 21px;
+  }
+  .featured-project {
+    margin-bottom: 45px;
+  }
+}

@@ -1,0 +1,61 @@
+body.modal-open {
+  overflow: hidden;
+}
+dialog {
+  background: var(--navy);
+  color: var(--text);
+  border: 1px solid #355471;
+  border-radius: 5px;
+  padding: 45px;
+  width: min(650px, calc(100% - 32px));
+  max-height: 85svh;
+  box-shadow: 0 20px 80px #0008;
+}
+dialog::backdrop {
+  background: #020c1bcc;
+  backdrop-filter: blur(7px);
+}
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 0;
+  color: var(--mint);
+  font-size: 18px;
+}
+.dialog-content h2 {
+  font-size: 36px;
+  margin: 15px 0 19px;
+}
+.dialog-content > p {
+  font-size: 15px;
+}
+.dialog-content > .eyebrow {
+  font-size: 10px;
+  padding-right: 18px;
+}
+.dialog-content h3 {
+  font-size: 17px;
+  margin: 26px 0 18px;
+}
+.dialog-content .button {
+  margin-top: 28px;
+}
+.dialog-content .arrow-list li {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  dialog {
+    padding: 40px 24px 26px;
+  }
+  .dialog-content h2 {
+    font-size: 30px;
+  }
+  .dialog-content .button {
+    font-size: 11px;
+    padding: 16px;
+  }
+}

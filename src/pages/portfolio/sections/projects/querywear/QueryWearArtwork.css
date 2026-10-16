@@ -1,0 +1,115 @@
+.query-window {
+  border: 1px solid #496e7666;
+  border-radius: 5px;
+  box-shadow: 0 15px 45px #00101966;
+  background: #0b2231;
+  transform: perspective(1200px) rotateY(5deg) rotateX(3deg);
+  width: 100%;
+  max-width: 455px;
+  margin: auto;
+}
+.window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #25404b;
+  padding: 10px 12px;
+  font: 7px var(--mono);
+  color: #8ba4b0;
+}
+.window-dots {
+  color: #467079;
+  font-size: 6px;
+  letter-spacing: 2px;
+}
+.query-body {
+  padding: 24px;
+}
+.query-body h4 {
+  font-size: 24px;
+  color: #d1e7e6;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  margin: 9px 0 21px;
+}
+.query-input {
+  display: flex;
+  justify-content: space-between;
+  background: #164153;
+  border: 1px solid #376c71;
+  padding: 11px 12px;
+  border-radius: 3px;
+  font-size: 9px;
+  color: #c6dddd;
+}
+.query-input > span:last-child {
+  color: var(--mint);
+}
+.sql-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font: 6px var(--mono);
+  letter-spacing: 0.7px;
+  margin: 19px 0 9px;
+  color: #9bb2be;
+}
+.sql-label > span:last-child {
+  margin-left: auto;
+}
+.status-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--mint);
+  border-radius: 50%;
+}
+.query-body pre {
+  margin: 0 0 13px;
+  font: 9px/1.8 var(--mono);
+  color: #97bac8;
+}
+.query-body code > span {
+  color: #77e1c7;
+}
+.query-body code b {
+  font-weight: 400;
+  color: #d5c09b;
+}
+.data-row {
+  font-size: 7px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  align-items: center;
+  gap: 5px;
+  border-top: 1px solid #2c465244;
+  padding: 7px 0;
+  color: #9ab1bc;
+}
+.data-pill {
+  background: #8c65362b;
+  color: #c9b17f;
+  padding: 2px 5px;
+  width: fit-content;
+  border-radius: 2px;
+  font-size: 6px;
+  justify-self: end;
+}
+@media (max-width: 1100px) {
+  .query-body {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 800px) {
+  .project-art .query-window {
+    max-width: 420px;
+  }
+}
+@media (max-width: 600px) {
+  .query-body {
+    padding: 18px;
+  }
+  .query-body h4 {
+    font-size: 23px;
+    margin-bottom: 18px;
+  }
+}

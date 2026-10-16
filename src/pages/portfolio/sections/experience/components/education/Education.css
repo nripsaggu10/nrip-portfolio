@@ -1,0 +1,65 @@
+.education-row {
+  margin-top: 65px;
+  padding-top: 29px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+.education-row .eyebrow {
+  font-size: 9px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.education-row h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.education-row p:not(.eyebrow) {
+  font-size: 13px;
+}
+.education-meta {
+  text-align: right;
+  flex-shrink: 0;
+  align-self: center;
+}
+.education-meta p:first-child {
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+@media (max-width: 800px) {
+  .education-row h3 {
+    font-size: 15px;
+  }
+  .education-row p:not(.eyebrow) {
+    font-size: 11px;
+  }
+}
+@media (max-width: 600px) {
+  .education-row {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+    padding-top: 25px;
+  }
+  .education-row h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .education-row p:not(.eyebrow) {
+    font-size: 12px;
+  }
+  .education-meta {
+    align-self: flex-start;
+    text-align: left;
+  }
+  .education-meta p {
+    display: inline;
+    margin-right: 12px;
+  }
+  .education-meta p:first-child {
+    font-size: 10px;
+  }
+}

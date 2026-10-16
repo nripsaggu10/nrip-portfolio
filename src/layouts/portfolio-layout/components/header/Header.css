@@ -1,0 +1,139 @@
+.site-header {
+  height: 105px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 25, 47, 0.92);
+  backdrop-filter: blur(16px);
+  transition:
+    height 0.25s,
+    box-shadow 0.25s;
+}
+.site-header.scrolled {
+  height: 80px;
+  box-shadow: 0 10px 25px -10px #020c1b88;
+}
+.brand {
+  color: var(--mint);
+  transition: transform 0.2s;
+}
+.brand:hover {
+  transform: translateY(-3px);
+}
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font: 12px var(--mono);
+}
+nav a:not(.button) {
+  padding: 12px 0;
+  white-space: nowrap;
+}
+nav a:hover,
+nav a.active {
+  color: var(--mint);
+}
+nav a span {
+  color: var(--mint);
+  margin-right: 4px;
+}
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .site-header {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 800px) {
+  .site-header {
+    height: 85px;
+    padding: 0 30px;
+  }
+  nav {
+    gap: 18px;
+    font-size: 10px;
+  }
+  nav a span {
+    margin-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .site-header,
+  .site-header.scrolled {
+    height: 77px;
+    padding: 0 23px;
+  }
+  .brand svg {
+    width: 39px;
+    height: 43px;
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    border: 0;
+    background: none;
+    color: var(--mint);
+    font: 11px var(--mono);
+    position: relative;
+    z-index: 55;
+  }
+  .menu-icon {
+    width: 23px;
+    height: 13px;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    position: relative;
+  }
+  .menu-icon:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 16px;
+    border-top: 1px solid currentColor;
+  }
+  .menu-toggle[aria-expanded="true"] .menu-icon {
+    transform: rotate(45deg);
+    height: 0;
+    border-bottom: 0;
+  }
+  .menu-toggle[aria-expanded="true"] .menu-icon:after {
+    top: -1px;
+    width: 23px;
+    transform: rotate(90deg);
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 77px;
+    left: 0;
+    right: 0;
+    background: #102239;
+    box-shadow: 0 12px 25px #020c1b80;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 24px 30px;
+    font-size: 13px;
+    border-bottom: 1px solid #2e455a;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav a:not(.button) {
+    width: 100%;
+    text-align: center;
+  }
+  nav .button {
+    margin-top: 8px;
+  }
+}
