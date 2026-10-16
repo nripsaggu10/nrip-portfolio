@@ -4,6 +4,10 @@ Personal portfolio built with React 19.3, TypeScript, and Vite. It preserves the
 
 ## Development
 
+On macOS, double-click `run.command` in Finder to start the project in a separate Terminal window and open Chrome at `http://localhost:5173/`. It selects Node through nvm and installs dependencies if missing. Leave this window running: saving source files updates the browser automatically, while your VS Code terminal stays free for Git commands. Press Control+C in the server window to stop it. After restarting your Mac, launch it again.
+
+Only run one development server on port 5173 at a time. You can also launch with `./run.command` from the project folder. If the file loses executable permission after copying, run `chmod +x run.command` once.
+
 Use Node.js 24 (see `.nvmrc`).
 
 ```sh
