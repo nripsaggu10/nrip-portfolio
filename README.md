@@ -20,12 +20,18 @@ The portfolio is at `/`; the résumé is at `/resume.html`. Each page has its ow
 ## Checks and production build
 
 ```sh
-npm test
+npm run test:run
 npm run build
 npm run preview
 ```
 
-`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, clipboard success/failure, navigation targets, and résumé printing. Native focus trapping and responsive layout are also checked in a real browser.
+`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, clipboard success/failure, navigation targets, and résumé printing.
+
+### Live tests in Chrome
+
+Run `npm test` to open Google Chrome with the Vitest browser dashboard. The tests execute in the real browser and automatically rerun when you save a test or an imported source file. Keep the terminal running; press Control+C to stop. Chrome must be installed and Node 24 selected in this terminal. The development server does not need to be running separately.
+
+The browser configuration uses Vitest's preview provider and Testing Library interactions. Dialog and observer APIs use the real browser implementations. The dashboard lists each passing or failing test. `npm run test:run` retains the fast, one-time jsdom run for pre-commit checks and CI without opening a browser.
 
 ## Source map
 
