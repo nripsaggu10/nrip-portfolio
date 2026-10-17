@@ -1,16 +1,25 @@
-import { engineeringContributions } from "../../../../../../shared/data/experience.data";
+import CompanyLogo from "../company-logo/CompanyLogo";
+import {
+  engineeringContributions,
+  morganStanleySkills,
+} from "../../../../../../shared/data/experience.data";
 import "./Role.css";
 export default function Role() {
   return (
-    <article className="experience-detail" id="current-role">
-      <h3>
-        Technical Consultant <span>@ Morgan Stanley</span>
-      </h3>
-      <p className="role-context">
-        Cyber Data Risk &amp; Resilience · Network Security
-      </p>
+    <article className="experience-detail">
+      <div className="role-heading">
+        <div className="role-heading-copy">
+          <h3>
+            Technical Consultant <span>@ Morgan Stanley</span>
+          </h3>
+          <p className="role-context">
+            Cyber Data Risk &amp; Resilience · Bengaluru, India
+          </p>
+          <p className="career-dates">December 2024 to Present</p>
+        </div>
+        <CompanyLogo company="morgan-stanley" />
+      </div>
       <p className="employment-note">
-        Senior Software Engineer at Bounteous India, assigned to Morgan Stanley.
         Contributing to enterprise security architecture and governance
         applications through full-stack development, modernization, and
         automation.
@@ -23,14 +32,7 @@ export default function Role() {
         ))}
       </ul>
       <ul className="tag-list" aria-label="Technologies used">
-        {[
-          "Java",
-          "Angular 21",
-          "TypeScript",
-          "RxJS",
-          "REST APIs",
-          "Authorization",
-        ].map((technology) => (
+        {morganStanleySkills.map((technology) => (
           <li key={technology}>{technology}</li>
         ))}
       </ul>

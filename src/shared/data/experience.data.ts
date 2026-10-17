@@ -56,3 +56,16 @@ export const expertise = [
       "Version control, API testing, debugging, code quality, and collaborative delivery.",
   },
 ];
+
+export const morganStanleySkills = [
+  "Cybersecurity",
+  "Java",
+  "Angular",
+  "Spring Framework",
+  "Python (Programming Language)",
+  "AngularJS",
+  "MySQL",
+  "Git",
+  "Jira",
+  "Linux",
+];

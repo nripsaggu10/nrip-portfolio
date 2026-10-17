@@ -9,7 +9,7 @@ export default function Toolbox() {
       aria-labelledby="expertise-title"
     >
       <h2 className="section-title" id="expertise-title">
-        <span>04.</span> Technical expertise <i aria-hidden="true" />
+        <span>05.</span> Technical expertise <i aria-hidden="true" />
       </h2>
       <Reveal className="toolbox-columns">
         {expertise.map(({ title, technologies, description }) => (

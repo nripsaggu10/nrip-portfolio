@@ -13,18 +13,18 @@ export default function PortfolioPage() {
       <Hero />
       <About />
       <Experience />
-      <Projects />
-      <Toolbox />
       <section
         className="section container education-section"
         id="education"
         aria-labelledby="education-title"
       >
         <h2 className="section-title" id="education-title">
-          <span>05.</span> Education <i aria-hidden="true" />
+          <span>03.</span> Education <i aria-hidden="true" />
         </h2>
         <Education />
       </section>
+      <Projects />
+      <Toolbox />
       <Certifications />
       <section
         className="section container recognition-section"

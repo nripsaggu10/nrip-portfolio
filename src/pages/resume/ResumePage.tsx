@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import {
   engineeringContributions,
+  morganStanleySkills,
   expertise,
 } from "../../shared/data/experience.data";
 import ResumeHeader from "./components/resume-header/ResumeHeader";
@@ -23,16 +24,19 @@ export default function ResumePage() {
         <ResumeSection id="experience-title" title="Experience">
           <article className="entry">
             <div className="entry-header">
-              <h3>Bounteous India · Senior Software Engineer</h3>
+              <h3>Morgan Stanley · Technical Consultant</h3>
               <span className="dates">Dec 2024 – Present</span>
             </div>
             <p className="subline">
-              Technical Consultant at Morgan Stanley · Cyber Data Risk &amp;
-              Resilience · Network Security · Bengaluru
+              Through Bounteous India · Cyber Data Risk &amp; Resilience ·
+              Security Development · Bengaluru
             </p>
-            <p className="stack">
-              Java · Angular 21 · TypeScript · RxJS · REST APIs · SQL
+            <p className="subline">
+              Bounteous India career progression. Senior Software Engineer,
+              August 2025 to Present. Software Engineer, December 2024 to August
+              2025.
             </p>
+            <p className="stack">{morganStanleySkills.join(" · ")}</p>
             <ul>
               {engineeringContributions.map(({ title, description }) => (
                 <li key={title}>
@@ -40,6 +44,20 @@ export default function ResumePage() {
                 </li>
               ))}
             </ul>
+          </article>
+          <article className="entry">
+            <div className="entry-header">
+              <h3>Aditya Birla Group · Electronics and Automation Intern</h3>
+              <span className="dates">Jan to Jun 2024</span>
+            </div>
+            <p className="subline">
+              College semester internship · Haryana, India
+            </p>
+            <p>
+              Worked with PLC, SCADA, and DCS architectures and assisted with
+              sensor calibration, instrumentation, and industrial automation
+              upgrades.
+            </p>
           </article>
         </ResumeSection>
 
@@ -121,20 +139,28 @@ export default function ResumePage() {
           </article>
         </ResumeSection>
 
+        <ResumeSection id="certifications-title" title="Certifications">
+          <article className="entry">
+            <h3>Claude Certified Architect - Foundations</h3>
+            <p>
+              Anthropic · Issued August 2026 · Expires August 2027 · Score
+              860/1000
+            </p>
+          </article>
+          <article className="entry">
+            <h3>Model Context Protocol: Advanced Topics</h3>
+            <p>Anthropic · Issued August 2026 · Credential ID koq86y5rq2pp</p>
+          </article>
+        </ResumeSection>
         <ResumeSection
           id="achievement-title"
           title="Recognition and Professional Development"
         >
           <article className="entry">
-            <h3>Elevate APAC · 2026</h3>
+            <h3>ISC2 Candidate</h3>
             <p>
-              Recognized through the professional appreciation initiative for
-              contributions during my assignment.
-            </p>
-            <h3>ISC2 Member</h3>
-            <p>
-              Professional membership with an interest in cybersecurity and
-              secure software engineering.
+              Candidate status supporting ongoing professional development in
+              cybersecurity.
             </p>
           </article>
           <article className="entry">

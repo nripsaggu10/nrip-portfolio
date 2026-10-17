@@ -76,3 +76,20 @@
     translate: none !important;
   }
 }
+
+.certification-card + .certification-card {
+  margin-top: 24px;
+}
+.certification-dates {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.certification-identifier {
+  font: var(--font-label)/1.8 var(--mono);
+  color: var(--muted);
+  margin-top: 20px;
+  overflow-wrap: anywhere;
+}

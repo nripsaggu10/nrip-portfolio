@@ -1,0 +1,21 @@
+.career-role h3 {
+  font-size: var(--font-heading);
+  font-weight: 550;
+  line-height: 1.4;
+}
+.career-role h3 span {
+  color: var(--mint);
+}
+.career-dates {
+  font: var(--font-small)/1.8 var(--mono);
+  margin-top: 12px;
+}
+.previous-role {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 28px;
+}
+.previous-role h4 {
+  font-size: var(--font-body);
+  color: var(--heading);
+}

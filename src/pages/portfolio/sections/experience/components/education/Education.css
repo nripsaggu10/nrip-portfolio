@@ -72,3 +72,42 @@
 .recognition-section .achievement {
   margin-top: 0;
 }
+
+.education-coursework {
+  margin-top: 28px;
+  max-width: 85ch;
+}
+.education-coursework h4 {
+  font-size: var(--font-body);
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+.coursework-list {
+  font-size: var(--font-small);
+  line-height: 1.9;
+}
+
+.coursework-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.coursework-list li {
+  display: inline;
+  transition: color 180ms ease;
+}
+.coursework-list li:not(:last-child)::after {
+  content: ", ";
+  color: var(--muted);
+}
+@media (hover: hover) {
+  .coursework-list li:hover {
+    color: var(--mint);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .coursework-list li {
+    transition: none;
+  }
+}
