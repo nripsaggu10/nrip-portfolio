@@ -115,3 +115,17 @@ p {
     widows: 2;
   }
 }
+
+/* Comfortable on-screen reading; print sizing remains defined by @media print. */
+@media screen {
+  body {
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+    line-height: 1.6;
+  }
+  .toolbar p {
+    font-size: clamp(0.875rem, 0.825rem + 0.15vw, 1rem);
+  }
+  main {
+    overflow-wrap: anywhere;
+  }
+}

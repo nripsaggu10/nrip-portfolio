@@ -68,7 +68,7 @@ export default function Header() {
             aria-current={activeSection === link.id ? "location" : undefined}
             onClick={closeMenu}
           >
-            <span>0{index + 1}.</span> {link.label}
+            <span>{link.number ?? `0${index + 1}`}.</span> {link.label}
           </a>
         ))}
         <a

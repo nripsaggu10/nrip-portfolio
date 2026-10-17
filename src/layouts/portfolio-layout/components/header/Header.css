@@ -28,9 +28,9 @@
 }
 nav {
   display: flex;
-  gap: 30px;
+  gap: 22px;
   align-items: center;
-  font: 12px var(--mono);
+  font: var(--font-control) var(--mono);
 }
 nav a:not(.button) {
   padding: 12px 0;
@@ -59,13 +59,12 @@ nav a span {
   }
   nav {
     gap: 18px;
-    font-size: 10px;
   }
   nav a span {
     margin-right: 0;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .site-header,
   .site-header.scrolled {
     height: 77px;
@@ -123,7 +122,6 @@ nav a span {
     flex-direction: column;
     gap: 10px;
     padding: 25px 24px 30px;
-    font-size: 13px;
     border-bottom: 1px solid #2e455a;
   }
   nav.open {
@@ -136,4 +134,7 @@ nav a span {
   nav .button {
     margin-top: 8px;
   }
+}
+.menu-label {
+  font-size: var(--font-control);
 }

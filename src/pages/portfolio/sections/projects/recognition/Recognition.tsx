@@ -30,6 +30,24 @@ export default function Recognition() {
           ’23
         </span>
       </Reveal>
+      <Reveal className="professional-development">
+        <div>
+          <h3>Elevate APAC</h3>
+          <p className="eyebrow">Professional recognition · 2026</p>
+          <p>
+            Recognized through the appreciation initiative for contributions
+            during my professional assignment.
+          </p>
+        </div>
+        <div>
+          <h3>ISC2</h3>
+          <p className="eyebrow">Professional membership</p>
+          <p>
+            Member of ISC2, with an ongoing interest in cybersecurity and secure
+            software engineering.
+          </p>
+        </div>
+      </Reveal>
     </>
   );
 }

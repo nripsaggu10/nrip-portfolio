@@ -7,12 +7,12 @@
   gap: 20px;
   justify-content: space-between;
   align-items: center;
-  font: 9px/1.7 var(--mono);
+  font: var(--font-meta)/1.7 var(--mono);
   color: var(--muted);
 }
 .site-footer > a:first-child {
   color: var(--heading);
-  font-size: 10px;
+  font-size: var(--font-small);
 }
 .site-footer a:hover {
   color: var(--mint);
@@ -22,7 +22,7 @@
   color: var(--mint);
 }
 .inspiration {
-  font-size: 8px;
+  font-size: var(--font-meta);
 }
 @media (max-width: 1100px) {
   .site-footer {
@@ -33,7 +33,6 @@
   .site-footer {
     max-width: calc(100% - 100px);
     flex-wrap: wrap;
-    font-size: 8px;
     gap: 12px;
   }
   .site-footer .inspiration {
@@ -49,13 +48,10 @@
     gap: 15px;
   }
   .site-footer > p {
-    font-size: 7px;
-  }
-  .site-footer > a:first-child {
-    font-size: 9px;
+    font-size: var(--font-meta);
   }
   .site-footer .inspiration {
     margin-top: 0;
-    font-size: 7px;
+    font-size: var(--font-meta);
   }
 }

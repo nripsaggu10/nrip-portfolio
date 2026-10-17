@@ -46,6 +46,18 @@ See [the full folder tree and parent–child component map](docs/PROJECT_STRUCTU
 - Each visual component owns its `.tsx` markup and `.css`; interactive behavior lives in adjacent `.ts` hooks. Tests are placed beside the feature they cover.
 - `src/main.tsx` and `src/resume.tsx` remain the two entry points. `index.html` and `resume.html` remain the HTML shells.
 
+## Hover feedback and responsive checks
+
+Portraits and project artwork use small lifts, border highlights, and gentle zoom on devices with a mouse or trackpad. Informational cards also respond subtly. Touch screens keep a stable layout; reduced-motion preferences disable movement. The portrait stays in its original colors. Project actions also highlight their card for keyboard focus.
+
+`npm test` includes browser-only layout checks at 320, 390, 600, 640, 768, 1024, 1280, and 1920 pixels. These verify portrait sizing and horizontal overflow. `npm run test:run` excludes browser-only layout checks because jsdom does not calculate real layout.
+
+## Fluid typography
+
+The portfolio type scale lives in `src/shared/styles/tokens.css`. Body text uses `--font-body` (16–18px at the default browser text size). Compact project descriptions use `--font-card-body` (15–17px), and percentage statistics use `--font-metric` rather than the project-title scale. Separate fluid tokens cover headings, controls, labels, and metadata. These use `clamp()` with rem and viewport units, so text grows smoothly and respects browser text preferences. Artwork text uses container-relative units to scale with its card. Component styles consume these tokens rather than shrinking important text to tiny pixel sizes on mobile.
+
+The hero grows to fit its content. Browser checks cover text scaling, navigation bounds, hero spacing, and 200% browser text size. The résumé also has fluid screen typography, while its print rules remain separate.
+
 ## Deployment
 
 Netlify deploys this GitHub repository's `main` branch. `netlify.toml` sets Node 24, `npm run build`, and `dist` as the publish directory. `/resume` and `/resume/` continue to resolve to the résumé page. Commit source and `package-lock.json`; do not commit `node_modules` or build output.

@@ -1,3 +1,8 @@
+import { Fragment } from "react";
+import {
+  engineeringContributions,
+  expertise,
+} from "../../shared/data/experience.data";
 import ResumeHeader from "./components/resume-header/ResumeHeader";
 import ResumeSection from "./components/resume-section/ResumeSection";
 import { useResumePrint } from "./useResumePrint";
@@ -18,33 +23,22 @@ export default function ResumePage() {
         <ResumeSection id="experience-title" title="Experience">
           <article className="entry">
             <div className="entry-header">
-              <h3>Accolite · Senior Software Engineer</h3>
+              <h3>Bounteous India · Senior Software Engineer</h3>
               <span className="dates">Dec 2024 – Present</span>
             </div>
             <p className="subline">
-              Technical Consultant, Morgan Stanley account · Cyber Data Risk
-              &amp; Resilience Division · Bengaluru
+              Technical Consultant at Morgan Stanley · Cyber Data Risk &amp;
+              Resilience · Network Security · Bengaluru
             </p>
             <p className="stack">
-              Java · Spring · Angular · Python · SQL · XML · Git
+              Java · Angular 21 · TypeScript · RxJS · REST APIs · SQL
             </p>
             <ul>
-              <li>
-                Resolve bugs and release features in two-week sprints focused on
-                security compliance.
-              </li>
-              <li>
-                Built a Timeline feature for security design changes, with fast
-                data loading and estimated times adjusted to EST.
-              </li>
-              <li>
-                Developed a Spring email feature for secure communication
-                between internal services.
-              </li>
-              <li>
-                Migrated AngularJS to Angular while maintaining backend
-                compatibility, improving performance by 35%.
-              </li>
+              {engineeringContributions.map(({ title, description }) => (
+                <li key={title}>
+                  <strong>{title}.</strong> {description}
+                </li>
+              ))}
             </ul>
           </article>
         </ResumeSection>
@@ -105,17 +99,12 @@ export default function ResumePage() {
 
         <ResumeSection id="skills-title" title="Technical Skills">
           <dl className="skills">
-            <dt>Languages</dt>
-            <dd>Java, Python, C++, TypeScript, SQL</dd>
-            <dt>Frameworks &amp; AI</dt>
-            <dd>
-              Spring, Angular, React.js, LangChain, Hugging Face, TensorFlow,
-              NLP, Random Forest, Decision Trees
-            </dd>
-            <dt>Data &amp; Tools</dt>
-            <dd>
-              MySQL, PostgreSQL, Excel, Git, Postman, APIs, Linux, Cybersecurity
-            </dd>
+            {expertise.map(({ title, technologies }) => (
+              <Fragment key={title}>
+                <dt>{title}</dt>
+                <dd>{technologies}</dd>
+              </Fragment>
+            ))}
           </dl>
         </ResumeSection>
 
@@ -129,16 +118,25 @@ export default function ResumePage() {
               Bachelor’s in Electronics and Computer Engineering · Patiala ·
               CGPA: 7.25/10
             </p>
-            <p className="coursework">
-              <strong>Coursework:</strong> Data Structures &amp; Algorithms,
-              Object-Oriented Programming, Operating Systems, Data Science,
-              Database Management Systems, Deep Learning, Blockchain,
-              Cryptography, Corporate Finance.
-            </p>
           </article>
         </ResumeSection>
 
-        <ResumeSection id="achievement-title" title="Achievement">
+        <ResumeSection
+          id="achievement-title"
+          title="Recognition and Professional Development"
+        >
+          <article className="entry">
+            <h3>Elevate APAC · 2026</h3>
+            <p>
+              Recognized through the professional appreciation initiative for
+              contributions during my assignment.
+            </p>
+            <h3>ISC2 Member</h3>
+            <p>
+              Professional membership with an interest in cybersecurity and
+              secure software engineering.
+            </p>
+          </article>
           <article className="entry">
             <div className="entry-header">
               <h3>IdeaThon Runner-Up</h3>

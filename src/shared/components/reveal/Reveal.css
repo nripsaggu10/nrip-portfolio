@@ -3,7 +3,10 @@
   transform: translateY(18px);
   transition:
     opacity 0.55s ease,
-    transform 0.55s ease;
+    transform 0.55s ease,
+    translate 350ms var(--ease-out),
+    border-color 300ms ease,
+    box-shadow 350ms ease;
 }
 .reveal-ready.in-view {
   opacity: 1;

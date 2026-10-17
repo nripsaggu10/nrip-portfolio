@@ -41,7 +41,7 @@
 }
 .email-rail a {
   writing-mode: vertical-rl;
-  font: 11px var(--mono);
+  font: var(--font-label) var(--mono);
   letter-spacing: 1px;
   transition:
     color 0.2s,

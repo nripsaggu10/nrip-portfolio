@@ -27,35 +27,32 @@ dialog::backdrop {
   font-size: 18px;
 }
 .dialog-content h2 {
-  font-size: 36px;
+  font-size: var(--font-card);
   margin: 15px 0 19px;
 }
 .dialog-content > p {
-  font-size: 15px;
+  font-size: var(--font-body);
 }
 .dialog-content > .eyebrow {
-  font-size: 10px;
+  font-size: var(--font-label);
   padding-right: 18px;
 }
 .dialog-content h3 {
-  font-size: 17px;
+  font-size: var(--font-heading);
   margin: 26px 0 18px;
 }
 .dialog-content .button {
   margin-top: 28px;
 }
 .dialog-content .arrow-list li {
-  font-size: 14px;
+  font-size: var(--font-body);
 }
 @media (max-width: 600px) {
   dialog {
     padding: 40px 24px 26px;
   }
-  .dialog-content h2 {
-    font-size: 30px;
-  }
   .dialog-content .button {
-    font-size: 11px;
+    font-size: var(--font-control);
     padding: 16px;
   }
 }

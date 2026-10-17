@@ -29,7 +29,7 @@ describe("Contact.test", () => {
     expect(screen.getByRole("status")).toHaveTextContent(
       "Select the email address to copy it.",
     );
-    expect(screen.getByRole("link", { name: "Say hello" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Email me" })).toHaveAttribute(
       "href",
       "mailto:nripdevsaggu316@gmail.com",
     );

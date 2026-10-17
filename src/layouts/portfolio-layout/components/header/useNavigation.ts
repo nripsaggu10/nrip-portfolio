@@ -39,7 +39,17 @@ export function useNavigation() {
       },
       { rootMargin: "-15% 0px -55% 0px", threshold: 0 },
     );
-    ["home", "about", "experience", "projects", "contact"].forEach((id) => {
+    [
+      "home",
+      "experience",
+      "expertise",
+      "projects",
+      "about",
+      "education",
+      "certifications",
+      "recognition",
+      "contact",
+    ].forEach((id) => {
       const section = document.getElementById(id);
       if (section) observer.observe(section);
     });

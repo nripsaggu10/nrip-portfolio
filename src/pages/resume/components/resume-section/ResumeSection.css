@@ -135,3 +135,21 @@ li {
     widows: 2;
   }
 }
+
+@media screen {
+  h2 {
+    font-size: clamp(0.875rem, 0.825rem + 0.15vw, 1rem);
+  }
+  h3 {
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  }
+  .dates,
+  .stack,
+  .subline,
+  .coursework {
+    font-size: clamp(0.875rem, 0.825rem + 0.15vw, 1rem);
+  }
+  .entry-header h3 {
+    min-width: 0;
+  }
+}

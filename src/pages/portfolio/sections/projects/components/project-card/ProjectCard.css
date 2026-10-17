@@ -20,18 +20,18 @@
   display: flex;
   justify-content: space-between;
   color: #91c5c5;
-  font: 8px var(--mono);
+  font: var(--font-art-label) var(--mono);
   letter-spacing: 1px;
   margin-bottom: 26px;
 }
 .art-caption span:last-child {
-  font-size: 6px;
+  font-size: var(--font-art-tiny);
   align-self: center;
   letter-spacing: 0.5px;
   color: #77aaa9;
 }
 .mini-label {
-  font: 7px var(--mono);
+  font: var(--font-art-label) var(--mono);
   letter-spacing: 1px;
   color: #7da69f;
 }
@@ -42,15 +42,15 @@
   margin-left: -38px;
 }
 .project-copy .eyebrow {
-  font-size: 10px;
+  font-size: var(--font-label);
 }
 .project-copy h3 {
-  font-size: 33px;
+  font-size: var(--font-card);
   letter-spacing: -0.7px;
   margin: 9px 0;
 }
 .project-subtitle {
-  font-size: 13px;
+  font-size: var(--font-small);
   color: var(--muted);
   margin-bottom: 23px;
 }
@@ -58,18 +58,18 @@
   background: var(--panel);
   padding: 25px 29px;
   box-shadow: 0 10px 30px #020c1b33;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: var(--font-card-body);
+  line-height: 1.75;
 }
 .project-result {
   border-top: 1px solid #263c59;
   margin-top: 18px;
   padding-top: 14px;
-  font-size: 11px;
+  font-size: var(--font-small);
   color: var(--muted);
 }
 .project-result strong {
-  font-size: 22px;
+  font-size: var(--font-metric);
   font-weight: 500;
   color: var(--mint);
   margin-right: 6px;
@@ -82,7 +82,7 @@
   flex-wrap: wrap;
   gap: 7px 15px;
   margin: 21px 0 18px;
-  font: 10px/1.5 var(--mono);
+  font: var(--font-label)/1.5 var(--mono);
   color: #a1b0c9;
 }
 .project-links {
@@ -90,7 +90,7 @@
   gap: 24px;
   align-items: center;
   justify-content: flex-end;
-  font: 11px var(--mono);
+  font: var(--font-control) var(--mono);
 }
 .project-links a,
 .project-links button {
@@ -139,11 +139,7 @@
     padding: 22px;
   }
   .project-tech {
-    font-size: 9px;
     gap: 8px 11px;
-  }
-  .project-copy h3 {
-    font-size: 30px;
   }
 }
 @media (max-width: 800px) {
@@ -171,10 +167,6 @@
     box-shadow: none;
     padding: 0;
     background: transparent;
-    font-size: 15px;
-  }
-  .project-copy h3 {
-    font-size: 30px;
   }
   .project-subtitle {
     margin-bottom: 20px;
@@ -185,9 +177,6 @@
   .project-tech,
   .project-links {
     justify-content: flex-start;
-  }
-  .project-copy .eyebrow {
-    font-size: 9px;
   }
   .reverse .project-art,
   .reverse .project-copy {
@@ -201,36 +190,70 @@
     min-height: 320px;
   }
   .art-caption {
-    font-size: 7px;
     margin-bottom: 19px;
-  }
-  .art-caption span:last-child {
-    font-size: 5px;
   }
   .project-copy,
   .reverse .project-copy {
     padding: 24px 21px;
   }
-  .project-copy h3 {
-    font-size: 29px;
-  }
-  .project-description {
-    font-size: 14px;
-  }
   .project-links {
     gap: 22px;
-    font-size: 10px;
-  }
-  .project-tech {
-    font-size: 9px;
-  }
-  .project-result {
-    font-size: 10px;
-  }
-  .project-result strong {
-    font-size: 21px;
   }
   .featured-project {
     margin-bottom: 45px;
   }
+}
+
+.project-art,
+.project-description,
+.project-copy h3 {
+  transition:
+    border-color 300ms ease,
+    box-shadow 350ms ease,
+    color 250ms ease;
+}
+.featured-project:focus-within .project-art {
+  border-color: var(--mint);
+}
+.featured-project:focus-within .project-copy h3 {
+  color: var(--mint);
+}
+@media (hover: hover) and (pointer: fine) {
+  .featured-project.in-view:hover {
+    translate: 0 -5px;
+  }
+  .featured-project:hover .project-art {
+    border-color: var(--mint);
+    box-shadow: 0 18px 40px #020c1b66;
+  }
+  .featured-project:hover .project-description {
+    box-shadow: 0 18px 38px #020c1b66;
+  }
+  .featured-project:hover .project-copy h3 {
+    color: var(--mint);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured-project {
+    translate: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .project-links {
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+}
+
+.project-art {
+  container-type: inline-size;
+}
+.project-tech {
+  line-height: 1.8;
+}
+.project-links {
+  flex-wrap: wrap;
+}
+.project-subtitle {
+  line-height: 1.6;
 }

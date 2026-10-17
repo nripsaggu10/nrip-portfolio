@@ -6,7 +6,7 @@ export default function Footer() {
         <a href="#home">
           Nripdev Singh <span aria-hidden="true">↑</span>
         </a>
-        <p>Built with care. Always learning.</p>
+        <p>© 2026 Nripdev Singh.</p>
         <a
           className="inspiration"
           href="https://v4.brittanychiang.com/"

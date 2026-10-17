@@ -7,17 +7,17 @@
   gap: 25px;
 }
 .education-row .eyebrow {
-  font-size: 9px;
+  font-size: var(--font-label);
   color: var(--muted);
   margin-bottom: 10px;
 }
 .education-row h3 {
-  font-size: 17px;
+  font-size: var(--font-heading);
   font-weight: 500;
   margin-bottom: 8px;
 }
 .education-row p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: var(--font-small);
 }
 .education-meta {
   text-align: right;
@@ -26,16 +26,8 @@
 }
 .education-meta p:first-child {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: var(--font-label);
   margin-bottom: 6px;
-}
-@media (max-width: 800px) {
-  .education-row h3 {
-    font-size: 15px;
-  }
-  .education-row p:not(.eyebrow) {
-    font-size: 11px;
-  }
 }
 @media (max-width: 600px) {
   .education-row {
@@ -45,11 +37,7 @@
     padding-top: 25px;
   }
   .education-row h3 {
-    font-size: 16px;
     line-height: 1.4;
-  }
-  .education-row p:not(.eyebrow) {
-    font-size: 12px;
   }
   .education-meta {
     align-self: flex-start;
@@ -59,7 +47,28 @@
     display: inline;
     margin-right: 12px;
   }
-  .education-meta p:first-child {
-    font-size: 10px;
+}
+
+.education-row {
+  transition:
+    translate 350ms var(--ease-out),
+    border-color 300ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .education-row:hover {
+    translate: 0 -4px;
+    border-color: #64ffda66;
   }
+}
+@media (prefers-reduced-motion: reduce) {
+  .education-row {
+    translate: none !important;
+  }
+}
+
+.education-section .education-row {
+  margin-top: 0;
+}
+.recognition-section .achievement {
+  margin-top: 0;
 }

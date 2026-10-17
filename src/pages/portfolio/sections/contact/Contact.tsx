@@ -11,14 +11,14 @@ export default function Contact() {
         id="contact"
         aria-labelledby="contact-title"
       >
-        <p className="eyebrow">04. WHAT’S NEXT?</p>
-        <h2 id="contact-title">Let’s build something.</h2>
+        <p className="eyebrow">08. CONTACT</p>
+        <h2 id="contact-title">Let’s connect.</h2>
         <p>
-          Have a project in mind, a question about my work, or just want to say
-          hello? I’d love to hear from you.
+          For software engineering opportunities, technical discussions, or
+          collaboration, you can reach me by email or LinkedIn.
         </p>
         <a className="button contact-cta" href={profile.emailHref}>
-          Say hello <span aria-hidden="true">↗</span>
+          Email me <span aria-hidden="true">↗</span>
         </a>
         <div className="contact-email">
           <a href={profile.emailHref}>{profile.email}</a>

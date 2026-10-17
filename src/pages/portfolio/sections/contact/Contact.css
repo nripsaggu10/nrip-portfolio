@@ -4,10 +4,10 @@
   padding: 115px 0 130px;
 }
 .contact-section .eyebrow {
-  font-size: 11px;
+  font-size: var(--font-label);
 }
 .contact-section h2 {
-  font-size: 53px;
+  font-size: var(--font-contact);
   letter-spacing: -2px;
   margin: 21px 0 23px;
   font-weight: 650;
@@ -15,7 +15,7 @@
 .contact-section > p:not(.eyebrow) {
   max-width: 495px;
   margin: auto;
-  font-size: 16px;
+  font-size: var(--font-body);
   line-height: 1.85;
 }
 .contact-cta {
@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font: 11px var(--mono);
+  font: var(--font-meta) var(--mono);
   color: var(--muted);
 }
 .contact-email > a:hover {
@@ -48,7 +48,7 @@
   justify-content: center;
   gap: 27px;
   margin-top: 22px;
-  font: 10px var(--mono);
+  font: var(--font-control) var(--mono);
 }
 .contact-socials a {
   padding: 10px 0;
@@ -60,31 +60,32 @@
   .contact-section {
     padding: 85px 0;
   }
-  .contact-section h2 {
-    font-size: 46px;
-  }
 }
 @media (max-width: 600px) {
   .contact-section {
     padding: 75px 0 85px;
   }
   .contact-section h2 {
-    font-size: 38px;
     letter-spacing: -1.7px;
     line-height: 1.2;
   }
-  .contact-section > p:not(.eyebrow) {
-    font-size: 15px;
-  }
-  .contact-section .eyebrow {
-    font-size: 10px;
-  }
   .contact-email {
-    font-size: 10px;
     gap: 3px;
   }
   .contact-socials {
     gap: 24px;
-    font-size: 10px;
   }
+}
+
+.contact-email > a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.contact-socials {
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.contact-section h2 {
+  overflow-wrap: anywhere;
 }

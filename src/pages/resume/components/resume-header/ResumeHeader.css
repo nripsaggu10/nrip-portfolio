@@ -45,3 +45,15 @@ address {
     font-size: 9pt;
   }
 }
+
+@media screen {
+  h1 {
+    font-size: clamp(2rem, 1.7rem + 1vw, 2.5rem);
+  }
+  .headline {
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  }
+  address {
+    font-size: clamp(0.875rem, 0.825rem + 0.15vw, 1rem);
+  }
+}
