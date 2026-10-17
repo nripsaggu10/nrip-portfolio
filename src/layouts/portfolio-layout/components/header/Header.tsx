@@ -60,7 +60,7 @@ export default function Header() {
         aria-label="Main navigation"
         className={menuOpen ? "open" : undefined}
       >
-        {navigationLinks.map((link, index) => (
+        {navigationLinks.map((link) => (
           <a
             key={link.id}
             href={`#${link.id}`}
@@ -68,20 +68,30 @@ export default function Header() {
             aria-current={activeSection === link.id ? "location" : undefined}
             onClick={closeMenu}
           >
-            <span>{link.number ?? `0${index + 1}`}.</span> {link.label}
+            {link.label}
           </a>
         ))}
         <a
-          className="button button-small"
+          className="button button-small mobile-resume"
           href={profile.resumeHref}
           target="_blank"
           rel="noopener"
           onClick={closeMenu}
         >
-          Résumé <span aria-hidden="true">↗</span>
+          RESUME <span aria-hidden="true">↗</span>
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </nav>
+      <a
+        className="button button-small header-resume"
+        href={profile.resumeHref}
+        target="_blank"
+        rel="noopener"
+        onClick={closeMenu}
+      >
+        RESUME <span aria-hidden="true">↗</span>
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
     </header>
   );
 }

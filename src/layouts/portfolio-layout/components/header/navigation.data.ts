@@ -4,5 +4,7 @@ export const navigationLinks = [
   { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
   { id: "expertise", label: "Expertise" },
-  { id: "contact", label: "Contact", number: "08" },
+  { id: "certifications", label: "Certifications" },
+  { id: "recognition", label: "Recognition" },
+  { id: "contact", label: "Contact" },
 ];

@@ -28,3 +28,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.expertise-skills.tag-list {
+  margin: 0 0 18px;
+}

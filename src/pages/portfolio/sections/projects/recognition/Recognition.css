@@ -33,7 +33,7 @@
   color: #b3c0d6;
   margin-bottom: 15px;
 }
-.achievement-copy > p:last-child {
+.achievement-copy > p:not([class]) {
   font-size: var(--font-body);
   line-height: 1.8;
 }

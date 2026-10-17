@@ -1,6 +1,6 @@
 # Nripdev Singh — React portfolio
 
-Personal portfolio built with React 19.3, TypeScript, and Vite. It preserves the original navy-and-mint design, project illustrations, mobile layout, and printable résumé.
+Personal portfolio built with React 19.3, TypeScript, and Vite. It preserves the original navy-and-mint design, project illustrations, mobile layout, and PDF résumé.
 
 ## Development
 
@@ -15,7 +15,7 @@ npm ci
 npm run dev
 ```
 
-The portfolio is at `/`; the résumé is at `/resume.html`. Each page has its own React entry and stylesheet. No backend or environment secrets are required.
+The portfolio is at `/`; Résumé links open `/nripdev-singh-resume.pdf` directly. Replace `public/nripdev-singh-resume.pdf` to update the document. No backend or environment secrets are required.
 
 ## Checks and production build
 
@@ -25,7 +25,7 @@ npm run build
 npm run preview
 ```
 
-`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, clipboard success/failure, navigation targets, and résumé printing.
+`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, company tabs, navigation targets, and the résumé PDF link.
 
 ### Live tests in Chrome
 
@@ -41,10 +41,10 @@ See [the full folder tree and parent–child component map](docs/PROJECT_STRUCTU
 - `src/layouts/portfolio-layout/`: header, footer, and social rails.
 - `src/pages/portfolio/sections/`: hero, about, experience, projects, and contact.
 - `src/pages/portfolio/sections/projects/querywear/` and `healthfirst/`: project-specific data and artwork.
-- `src/pages/resume/`: printable résumé and its child components.
+- `src/pages/resume/`: PDF résumé and its child components.
 - `src/shared/`: reusable reveal/toast components, profile data, and foundational styles.
 - Each visual component owns its `.tsx` markup and `.css`; interactive behavior lives in adjacent `.ts` hooks. Tests are placed beside the feature they cover.
-- `src/main.tsx` and `src/resume.tsx` remain the two entry points. `index.html` and `resume.html` remain the HTML shells.
+- `src/main.tsx` is the React entry point; `index.html` is its HTML shell. The résumé is served as a static PDF.
 
 ## Hover feedback and responsive checks
 

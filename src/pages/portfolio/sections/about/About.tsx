@@ -10,7 +10,7 @@ export default function About() {
         aria-labelledby="about-title"
       >
         <h2 className="section-title" id="about-title">
-          <span>01.</span> A little about me <i aria-hidden="true"></i>
+          A little about me <i aria-hidden="true"></i>
         </h2>
         <Reveal className="about-grid">
           <div className="about-copy">

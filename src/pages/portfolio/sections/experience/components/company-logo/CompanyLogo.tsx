@@ -1,3 +1,4 @@
+import "../../../../../../shared/styles/institution-images.css";
 import morganStanley from "../../assets/morgan-stanley-icon.png";
 import bounteous from "../../assets/bounteous-icon.png";
 import adityaBirla from "../../assets/aditya-birla.png";
@@ -14,7 +15,7 @@ export default function CompanyLogo({
 }) {
   const logo = logos[company];
   return (
-    <div className={`company-logo company-logo--${company}`}>
+    <div className={`company-logo institution-image company-logo--${company}`}>
       <img src={logo.src} alt={`${logo.name} logo`} decoding="async" />
     </div>
   );

@@ -14,7 +14,7 @@ export default function Experience() {
       aria-labelledby="experience-title"
     >
       <h2 className="section-title" id="experience-title">
-        <span>02.</span> Professional experience <i aria-hidden="true" />
+        Professional experience <i aria-hidden="true" />
       </h2>
       <Reveal className="experience-grid">
         <div
@@ -57,6 +57,10 @@ export default function Experience() {
               ) : (
                 <CareerRole
                   company={company.id as "bounteous" | "aditya-birla"}
+                  onViewClient={() => {
+                    setSelected(0);
+                    tabs.current[0]?.focus();
+                  }}
                 />
               )}
             </div>

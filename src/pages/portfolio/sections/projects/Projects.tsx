@@ -14,7 +14,7 @@ export default function Projects() {
         aria-labelledby="projects-title"
       >
         <h2 className="section-title" id="projects-title">
-          <span>04.</span> Independent projects <i aria-hidden="true" />
+          Independent projects <i aria-hidden="true" />
         </h2>
         {projects.map((project, index) => (
           <ProjectCard

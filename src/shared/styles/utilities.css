@@ -176,3 +176,43 @@
 .section-title {
   overflow-wrap: anywhere;
 }
+
+.tag-list li {
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    translate 300ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .tag-list li:hover {
+    color: var(--mint);
+    border-color: var(--mint);
+    background: #64ffda0d;
+    box-shadow: 0 6px 16px #020c1b44;
+    translate: 0 -3px;
+    animation: skill-bounce 400ms var(--ease-out);
+  }
+}
+@keyframes skill-bounce {
+  0% {
+    translate: 0 0;
+  }
+  55% {
+    translate: 0 -5px;
+  }
+  80% {
+    translate: 0 -2px;
+  }
+  100% {
+    translate: 0 -3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tag-list li {
+    transition: none;
+    animation: none !important;
+    translate: none !important;
+  }
+}

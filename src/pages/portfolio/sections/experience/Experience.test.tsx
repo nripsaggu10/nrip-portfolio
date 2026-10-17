@@ -28,6 +28,13 @@ it("switches company panels and preserves the promotion timeline", async () => {
   expect(
     screen.queryByRole("tabpanel", { name: "Morgan Stanley" }),
   ).not.toBeInTheDocument();
+  await user.click(
+    screen.getByRole("button", { name: "View Morgan Stanley experience" }),
+  );
+  expect(screen.getByRole("tab", { name: "Morgan Stanley" })).toHaveFocus();
+  expect(
+    screen.getByRole("tabpanel", { name: "Morgan Stanley" }),
+  ).toBeVisible();
   await user.click(screen.getByRole("tab", { name: "Aditya Birla Group" }));
   expect(
     screen.getByRole("img", { name: "Aditya Birla Group logo" }),

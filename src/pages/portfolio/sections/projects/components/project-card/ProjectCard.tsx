@@ -24,7 +24,7 @@ export default function ProjectCard({
         <HealthFirstArtwork />
       )}
       <div className="project-copy">
-        <p className="eyebrow">FEATURED PROJECT / 0{index + 1}</p>
+        <p className="eyebrow">FEATURED PROJECT</p>
         <h3>{project.title}</h3>
         <p className="project-subtitle">{project.subtitle}</p>
         <div className="project-description">
@@ -33,7 +33,7 @@ export default function ProjectCard({
             <strong>{project.metric}</strong> {project.metricLabel}
           </p>
         </div>
-        <ul className="project-tech">
+        <ul className="project-tech tag-list">
           {project.cardTech.map((tech) => (
             <li key={tech}>{tech}</li>
           ))}

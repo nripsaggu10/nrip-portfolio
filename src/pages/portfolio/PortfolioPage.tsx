@@ -19,7 +19,7 @@ export default function PortfolioPage() {
         aria-labelledby="education-title"
       >
         <h2 className="section-title" id="education-title">
-          <span>03.</span> Education <i aria-hidden="true" />
+          Education <i aria-hidden="true" />
         </h2>
         <Education />
       </section>
@@ -32,7 +32,7 @@ export default function PortfolioPage() {
         aria-labelledby="recognition-title"
       >
         <h2 className="section-title" id="recognition-title">
-          <span>07.</span> Recognition <i aria-hidden="true" />
+          Recognition <i aria-hidden="true" />
         </h2>
         <Recognition />
       </section>

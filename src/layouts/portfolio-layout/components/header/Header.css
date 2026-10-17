@@ -1,90 +1,90 @@
 .site-header {
   height: 105px;
-  padding: 0 48px;
-  display: flex;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 110px;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   z-index: 50;
   background: rgba(10, 25, 47, 0.92);
   backdrop-filter: blur(16px);
   transition:
-    height 0.25s,
-    box-shadow 0.25s;
+    height 250ms,
+    box-shadow 250ms;
 }
 .site-header.scrolled {
   height: 80px;
   box-shadow: 0 10px 25px -10px #020c1b88;
 }
 .brand {
+  justify-self: start;
   color: var(--mint);
-  transition: transform 0.2s;
+  transition: transform 200ms;
 }
 .brand:hover {
   transform: translateY(-3px);
 }
-nav {
+.site-header nav {
   display: flex;
-  gap: 22px;
+  justify-content: center;
   align-items: center;
-  font: var(--font-control) var(--mono);
+  gap: clamp(14px, 1.4vw, 24px);
 }
-nav a:not(.button) {
-  padding: 12px 0;
+.site-header nav a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--muted);
+  font: 500 0.71875rem/1.5 var(--sans);
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
   white-space: nowrap;
+  transition: color 180ms ease;
 }
-nav a:hover,
-nav a.active {
+.site-header nav a:hover,
+.site-header nav a.active {
   color: var(--mint);
 }
-nav a span {
-  color: var(--mint);
-  margin-right: 4px;
+.header-resume {
+  justify-self: end;
+  font-size: 0.71875rem;
+  letter-spacing: 0.04em;
+}
+.site-header nav .mobile-resume {
+  display: none;
 }
 .menu-toggle {
   display: none;
 }
-@media (max-width: 1100px) {
-  .site-header {
-    padding: 0 32px;
-  }
-}
-@media (max-width: 800px) {
-  .site-header {
-    height: 85px;
-    padding: 0 30px;
-  }
-  nav {
-    gap: 18px;
-  }
-  nav a span {
-    margin-right: 0;
-  }
-}
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .site-header,
   .site-header.scrolled {
     height: 77px;
     padding: 0 23px;
+    grid-template-columns: 1fr auto;
   }
   .brand svg {
     width: 39px;
     height: 43px;
   }
+  .header-resume {
+    display: none;
+  }
   .menu-toggle {
     display: flex;
+    justify-self: end;
     align-items: center;
     gap: 12px;
     min-height: 44px;
     border: 0;
     background: none;
     color: var(--mint);
-    font: 11px var(--mono);
+    font: 0.75rem var(--mono);
     position: relative;
     z-index: 55;
+    cursor: pointer;
   }
   .menu-icon {
     width: 23px;
@@ -111,30 +111,77 @@ nav a span {
     width: 23px;
     transform: rotate(90deg);
   }
-  nav {
+  .site-header nav {
     display: none;
     position: absolute;
     top: 77px;
     left: 0;
     right: 0;
+    max-height: calc(100svh - 77px);
+    overflow-y: auto;
     background: #102239;
     box-shadow: 0 12px 25px #020c1b80;
     flex-direction: column;
-    gap: 10px;
-    padding: 25px 24px 30px;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 20px 24px 26px;
     border-bottom: 1px solid #2e455a;
   }
-  nav.open {
+  .site-header nav.open {
     display: flex;
   }
-  nav a:not(.button) {
+  .site-header nav a:not(.button) {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
-  nav .button {
-    margin-top: 8px;
+  .site-header nav .mobile-resume {
+    display: inline-flex;
+    margin-top: 12px;
   }
 }
-.menu-label {
-  font-size: var(--font-control);
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .brand,
+  .site-header nav a {
+    transition: none;
+  }
+  .brand:hover {
+    transform: none;
+  }
+}
+
+.site-header nav a:not(.button) {
+  position: relative;
+}
+.site-header nav a:not(.button)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  height: 1px;
+  background: var(--mint);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .site-header nav a:not(.button):hover::after {
+    transform: scaleX(0.75);
+  }
+}
+@media (max-width: 1200px) {
+  .site-header nav a:not(.button)::after {
+    left: 35%;
+    right: 35%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header nav a:not(.button)::after {
+    transition: none;
+  }
+}
+
+.site-header nav a:not(.button)[aria-current="location"]::after {
+  transform: scaleX(0.75);
 }

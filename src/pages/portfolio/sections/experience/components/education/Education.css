@@ -83,31 +83,37 @@
   color: var(--heading);
   margin-bottom: 10px;
 }
-.coursework-list {
-  font-size: var(--font-small);
-  line-height: 1.9;
+.education-identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  min-width: 0;
+}
+.education-logo {
+  display: block;
+  flex: 0 0 92px;
+  width: 92px;
+  height: 100px;
+  overflow: hidden;
+}
+.education-details {
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .education-identity {
+    gap: 20px;
+  }
+  .education-logo {
+    flex-basis: 63px;
+    width: 63px;
+    height: 68px;
+  }
 }
 
-.coursework-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.education-logo {
+  margin-top: 10px;
 }
-.coursework-list li {
-  display: inline;
-  transition: color 180ms ease;
-}
-.coursework-list li:not(:last-child)::after {
-  content: ", ";
-  color: var(--muted);
-}
-@media (hover: hover) {
-  .coursework-list li:hover {
-    color: var(--mint);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .coursework-list li {
-    transition: none;
-  }
+
+.coursework-list.tag-list {
+  margin-top: 0;
 }
