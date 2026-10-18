@@ -38,7 +38,7 @@ The browser configuration uses Vitest's preview provider and Testing Library int
 See [the full folder tree and parent–child component map](docs/PROJECT_STRUCTURE.md).
 
 - `src/app/`: application composition.
-- `src/layouts/portfolio-layout/`: header, footer, and social rails.
+- `src/layouts/portfolio-layout/`: header and footer.
 - `src/pages/portfolio/sections/`: hero, about, experience, projects, and contact.
 - `src/pages/portfolio/sections/projects/querywear/` and `healthfirst/`: project-specific data and artwork.
 - `src/pages/resume/`: PDF résumé and its child components.

@@ -19,7 +19,7 @@ export default function ProjectCard({
       className={`featured-project${index % 2 ? " reverse" : ""}`}
     >
       <header className="project-introduction">
-        <h3>{project.title}</h3>
+        <h3 id={project.id}>{project.title}</h3>
         <p className="project-subtitle">{project.subtitle}</p>
       </header>
       {project.id === "querywear" ? (

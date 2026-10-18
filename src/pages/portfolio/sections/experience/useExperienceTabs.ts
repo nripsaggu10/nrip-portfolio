@@ -12,6 +12,34 @@ export function useExperienceTabs() {
     media.addEventListener("change", update);
     return () => media.removeEventListener("change", update);
   }, []);
+  useEffect(() => {
+    let frame = 0;
+    const selectFromHash = () => {
+      const index = companies.findIndex(
+        (company) => window.location.hash === `#panel-${company.id}`,
+      );
+      if (index < 0) return;
+      setSelected(index);
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        document
+          .getElementById(`panel-${companies[index].id}`)
+          ?.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "instant"
+              : "smooth",
+            block: "start",
+          });
+      });
+    };
+    selectFromHash();
+    window.addEventListener("hashchange", selectFromHash);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", selectFromHash);
+    };
+  }, []);
   function onKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     let next = index;
     if (event.key === "Home") next = 0;

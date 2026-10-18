@@ -9,7 +9,6 @@ src/main.tsx
 └── App
     └── PortfolioLayout
         ├── Header
-        ├── SocialRails
         ├── PortfolioPage
         │   ├── Hero
         │   ├── About

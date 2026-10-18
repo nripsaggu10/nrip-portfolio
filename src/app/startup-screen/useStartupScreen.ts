@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
-export const INTRO_REVEAL_MS = 3000;
-export const INTRO_COMPLETE_MS = 3800;
+export const INTRO_REVEAL_MS = 1600;
+export const INTRO_COMPLETE_MS = 2100;
 type IntroPhase = "intro" | "revealing" | "ready";
 
 export function useStartupScreen() {

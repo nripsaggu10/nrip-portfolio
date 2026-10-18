@@ -22,23 +22,13 @@ export default function StartupScreen({ children }: { children: ReactNode }) {
         >
           <div className="startup-signature">
             <div className="startup-logo-wrap">
-              <svg
+              <img
                 className="startup-logo"
-                viewBox="0 0 144 164"
-                role="img"
-                aria-label="N logo"
-              >
-                <path
-                  className="startup-hexagon"
-                  d="M72 7 136 44v76l-64 37-64-37V44Z"
-                  pathLength="1"
-                />
-                <path
-                  className="startup-letter"
-                  d="M51 109V55l42 54V55"
-                  pathLength="1"
-                />
-              </svg>
+                src="/nrip-wordmark.svg"
+                alt="nrip. logo"
+                width="222"
+                height="130"
+              />
             </div>
           </div>
         </section>

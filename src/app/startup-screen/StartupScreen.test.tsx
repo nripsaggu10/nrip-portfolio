@@ -35,7 +35,7 @@ describe("startup screen", () => {
     vi.unstubAllGlobals();
   });
 
-  it("draws the N intro, reveals the page, and restores scrolling in StrictMode", () => {
+  it("reveals the nrip. wordmark, reveals the page, and restores scrolling in StrictMode", () => {
     const previousOverflow = document.body.style.overflow;
     const view = render(
       <StrictMode>
@@ -44,7 +44,7 @@ describe("startup screen", () => {
         </StartupScreen>
       </StrictMode>,
     );
-    expect(screen.getByRole("img", { name: "N logo" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "nrip. logo" })).toBeInTheDocument();
     expect(
       screen.queryByRole("heading", { name: "Portfolio" }),
     ).not.toBeInTheDocument();
@@ -58,7 +58,7 @@ describe("startup screen", () => {
       screen.getByRole("heading", { name: "Portfolio" }),
     ).toBeInTheDocument();
     expect(
-      screen.queryByRole("img", { name: "N logo" }),
+      screen.queryByRole("img", { name: "nrip. logo" }),
     ).not.toBeInTheDocument();
     expect(document.body.style.overflow).toBe(previousOverflow);
   });
