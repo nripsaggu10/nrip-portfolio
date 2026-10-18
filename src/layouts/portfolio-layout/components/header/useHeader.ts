@@ -7,7 +7,7 @@ export function useHeader() {
   const { scrolled, activeSection } = useNavigation();
 
   useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 601px)");
+    const desktop = window.matchMedia("(min-width: 1201px)");
     const close = () => setMenuOpen(false);
     desktop.addEventListener("change", close);
     return () => desktop.removeEventListener("change", close);

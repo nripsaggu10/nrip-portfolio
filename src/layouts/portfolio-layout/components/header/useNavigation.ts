@@ -1,3 +1,4 @@
+import { navigationLinks } from "./navigation.data";
 import { useEffect, useState } from "react";
 
 /** Observe browser state without attaching behavior to individual DOM nodes. */
@@ -30,20 +31,40 @@ export function useNavigation() {
   }, []);
 
   useEffect(() => {
-    if (!("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        }
-      },
-      { rootMargin: "-15% 0px -55% 0px", threshold: 0 },
-    );
-    ["home", "about", "experience", "projects", "contact"].forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
-    return () => observer.disconnect();
+    const sections = ["home", ...navigationLinks.map(({ id }) => id)]
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const readingLine = Math.max(110, window.innerHeight * 0.28);
+      let current = "home";
+      for (const section of sections) {
+        const bounds = section.getBoundingClientRect();
+        if (bounds.height > 0 && bounds.top <= readingLine)
+          current = section.id;
+      }
+      const root = document.documentElement;
+      if (
+        root.scrollHeight > window.innerHeight &&
+        window.scrollY + window.innerHeight >= root.scrollHeight - 2
+      )
+        current = "contact";
+      setActiveSection(current);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    window.addEventListener("load", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      window.removeEventListener("load", schedule);
+    };
   }, []);
 
   return { scrolled, activeSection };

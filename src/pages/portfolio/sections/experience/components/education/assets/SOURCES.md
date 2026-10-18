@@ -1,0 +1,1 @@
+Custom vector shield emblem created at the users request to match their supplied reference. The shield and ti monogram are SVG paths and shapes. This is a recreation, not a verified official university logo asset.

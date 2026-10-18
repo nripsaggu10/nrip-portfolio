@@ -18,22 +18,24 @@ export default function ProjectCard({
       as="article"
       className={`featured-project${index % 2 ? " reverse" : ""}`}
     >
+      <header className="project-introduction">
+        <h3 id={project.id}>{project.title}</h3>
+        <p className="project-subtitle">{project.subtitle}</p>
+      </header>
       {project.id === "querywear" ? (
         <QueryWearArtwork />
       ) : (
         <HealthFirstArtwork />
       )}
       <div className="project-copy">
-        <p className="eyebrow">FEATURED PROJECT / 0{index + 1}</p>
-        <h3>{project.title}</h3>
-        <p className="project-subtitle">{project.subtitle}</p>
         <div className="project-description">
           <p>{project.description}</p>
           <p className="project-result">
-            <strong>{project.metric}</strong> {project.metricLabel}
+            <strong>{project.metric}</strong>
+            <span>{project.metricLabel}</span>
           </p>
         </div>
-        <ul className="project-tech">
+        <ul className="project-tech tag-list">
           {project.cardTech.map((tech) => (
             <li key={tech}>{tech}</li>
           ))}

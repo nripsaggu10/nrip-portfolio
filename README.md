@@ -1,6 +1,6 @@
 # Nripdev Singh — React portfolio
 
-Personal portfolio built with React 19.3, TypeScript, and Vite. It preserves the original navy-and-mint design, project illustrations, mobile layout, and printable résumé.
+Personal portfolio built with React 19.3, TypeScript, and Vite. It uses a black-and-charcoal visual system, Apple-style system typography, larger project presentations, and a PDF résumé.
 
 ## Development
 
@@ -15,7 +15,7 @@ npm ci
 npm run dev
 ```
 
-The portfolio is at `/`; the résumé is at `/resume.html`. Each page has its own React entry and stylesheet. No backend or environment secrets are required.
+The portfolio is at `/`; Résumé links open `/nripdev-singh-resume.pdf` directly. Replace `public/nripdev-singh-resume.pdf` to update the document. No backend or environment secrets are required.
 
 ## Checks and production build
 
@@ -25,7 +25,7 @@ npm run build
 npm run preview
 ```
 
-`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, clipboard success/failure, navigation targets, and résumé printing.
+`build` checks TypeScript and produces the deployable `dist/` directory. Tests exercise menu behavior, both project dialogs, focus restoration, company tabs, navigation targets, and the résumé PDF link.
 
 ### Live tests in Chrome
 
@@ -38,13 +38,25 @@ The browser configuration uses Vitest's preview provider and Testing Library int
 See [the full folder tree and parent–child component map](docs/PROJECT_STRUCTURE.md).
 
 - `src/app/`: application composition.
-- `src/layouts/portfolio-layout/`: header, footer, and social rails.
+- `src/layouts/portfolio-layout/`: header and footer.
 - `src/pages/portfolio/sections/`: hero, about, experience, projects, and contact.
 - `src/pages/portfolio/sections/projects/querywear/` and `healthfirst/`: project-specific data and artwork.
-- `src/pages/resume/`: printable résumé and its child components.
+- `src/pages/resume/`: PDF résumé and its child components.
 - `src/shared/`: reusable reveal/toast components, profile data, and foundational styles.
 - Each visual component owns its `.tsx` markup and `.css`; interactive behavior lives in adjacent `.ts` hooks. Tests are placed beside the feature they cover.
-- `src/main.tsx` and `src/resume.tsx` remain the two entry points. `index.html` and `resume.html` remain the HTML shells.
+- `src/main.tsx` is the React entry point; `index.html` is its HTML shell. The résumé is served as a static PDF.
+
+## Hover feedback and responsive checks
+
+The opening portrait and project artwork use gentle zoom on devices with a mouse or trackpad. Informational cards also respond subtly. Touch screens keep a stable layout; reduced-motion preferences disable movement. The portrait stays in its original colors. Project actions retain visible keyboard focus indicators.
+
+`npm test` includes browser-only layout checks at 320, 390, 600, 640, 768, 1024, 1280, and 1920 pixels. These verify portrait sizing and horizontal overflow. `npm run test:run` excludes browser-only layout checks because jsdom does not calculate real layout.
+
+## Fluid typography
+
+The portfolio type scale lives in `src/shared/styles/tokens.css`. Body text uses `--font-body` (16–18px at the default browser text size). Compact project descriptions use `--font-card-body` (15–17px), and percentage statistics use `--font-metric` rather than the project-title scale. Separate fluid tokens cover headings, controls, labels, and metadata. These use `clamp()` with rem and viewport units, so text grows smoothly and respects browser text preferences. Artwork text uses container-relative units to scale with its card. Component styles consume these tokens rather than shrinking important text to tiny pixel sizes on mobile.
+
+The hero grows to fit its content. Browser checks cover text scaling, navigation bounds, hero spacing, and 200% browser text size. The résumé opens the supplied PDF directly.
 
 ## Deployment
 
@@ -52,4 +64,4 @@ Netlify deploys this GitHub repository's `main` branch. `netlify.toml` sets Node
 
 To publish a change, test it, commit it, and push to `main`. Confirm the resulting deployment in Netlify. Live website: https://nrip-portfolio.netlify.app/.
 
-Project illustrations are labeled interface concepts, not screenshots of the repositories. Personal content and metrics were supplied by Nripdev Singh. Visual direction inspired by [Brittany Chiang's v4 portfolio](https://v4.brittanychiang.com/).
+Project illustrations are labeled interface concepts, not screenshots of the repositories. Personal content and metrics were supplied by Nripdev Singh.

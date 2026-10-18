@@ -1,9 +1,13 @@
+import { useRef, useState } from "react";
+import PortfolioSearch from "./search/PortfolioSearch";
 import { profile } from "../../../../shared/data/profile.data";
 import { navigationLinks } from "./navigation.data";
 import "./Header.css";
 import { useHeader } from "./useHeader";
 
 export default function Header() {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchTrigger = useRef<HTMLButtonElement>(null);
   const {
     menuOpen,
     header,
@@ -21,29 +25,47 @@ export default function Header() {
     >
       <a
         className="brand"
-        href="#home"
+        href="/"
         aria-label="Nripdev Singh, home"
-        onClick={closeMenu}
+        onClick={(event) => {
+          event.preventDefault();
+          window.history.replaceState(null, "", "/");
+          window.scrollTo({ top: 0, behavior: "instant" });
+          window.location.reload();
+        }}
       >
-        <svg width="48" height="52" viewBox="0 0 48 52" aria-hidden="true">
-          <path
-            d="M24 2 45 14v24L24 50 3 38V14Z"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <text
-            x="24"
-            y="32"
-            textAnchor="middle"
-            fill="currentColor"
-            fontSize="16"
-            fontFamily="monospace"
-          >
-            N
-          </text>
-        </svg>
+        <img
+          className="brand-wordmark"
+          src="/nrip-wordmark.svg"
+          alt=""
+          width="96"
+          height="56"
+        />
       </a>
+      <button
+        className="header-search-toggle"
+        ref={searchTrigger}
+        type="button"
+        aria-label="Search portfolio"
+        aria-haspopup="dialog"
+        onClick={() => {
+          closeMenu();
+          setSearchOpen(true);
+        }}
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="m16 16 5 5" />
+        </svg>
+      </button>
       <button
         ref={toggle}
         className="menu-toggle"
@@ -60,7 +82,7 @@ export default function Header() {
         aria-label="Main navigation"
         className={menuOpen ? "open" : undefined}
       >
-        {navigationLinks.map((link, index) => (
+        {navigationLinks.map((link) => (
           <a
             key={link.id}
             href={`#${link.id}`}
@@ -68,20 +90,36 @@ export default function Header() {
             aria-current={activeSection === link.id ? "location" : undefined}
             onClick={closeMenu}
           >
-            <span>0{index + 1}.</span> {link.label}
+            {link.label}
           </a>
         ))}
         <a
-          className="button button-small"
+          className="button button-small mobile-resume"
           href={profile.resumeHref}
           target="_blank"
           rel="noopener"
           onClick={closeMenu}
         >
-          Résumé <span aria-hidden="true">↗</span>
+          RESUME <span aria-hidden="true">↗</span>
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </nav>
+      <a
+        className="button button-small header-resume"
+        href={profile.resumeHref}
+        target="_blank"
+        rel="noopener"
+        onClick={closeMenu}
+      >
+        RESUME <span aria-hidden="true">↗</span>
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
+      {searchOpen && (
+        <PortfolioSearch
+          trigger={searchTrigger.current}
+          onClose={() => setSearchOpen(false)}
+        />
+      )}
     </header>
   );
 }

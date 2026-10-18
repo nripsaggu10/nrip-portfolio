@@ -5,13 +5,18 @@
 [build.environment]
   NODE_VERSION = "24"
 
-# Preserve the clean résumé URL already used by Netlify Pretty URLs.
+# Keep existing résumé links working after switching to the supplied PDF.
 [[redirects]]
   from = "/resume"
-  to = "/resume.html"
-  status = 200
+  to = "/nripdev-singh-resume.pdf"
+  status = 301
 
 [[redirects]]
   from = "/resume/"
-  to = "/resume.html"
-  status = 200
+  to = "/nripdev-singh-resume.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/resume.html"
+  to = "/nripdev-singh-resume.pdf"
+  status = 301

@@ -2,7 +2,7 @@ import type { Project } from "../project.types";
 export const querywear: Project = {
   id: "querywear",
   title: "QueryWear",
-  subtitle: "Your questions, translated into SQL.",
+  subtitle: "Natural language to SQL.",
   description:
     "A natural language interface that makes a database accessible through everyday questions. Built with Google PaLM and LangChain, with few-shot learning and semantic search to improve SQL translation.",
   metric: "89%",

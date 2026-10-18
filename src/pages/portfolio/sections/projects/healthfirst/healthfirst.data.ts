@@ -2,7 +2,7 @@ import type { Project } from "../project.types";
 export const healthfirst: Project = {
   id: "healthfirst",
   title: "HealthFirst",
-  subtitle: "Connecting data with better care.",
+  subtitle: "Healthcare APIs and machine learning.",
   description:
     "A team capstone bringing together patient data APIs and machine learning. I focused on backend development, database integration, and a disease prediction chatbot using Random Forest and Decision Trees.",
   metric: "40%",

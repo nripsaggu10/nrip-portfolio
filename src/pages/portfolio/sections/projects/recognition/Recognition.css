@@ -1,9 +1,10 @@
 .achievement {
+  border-radius: 20px;
   display: flex;
   gap: 30px;
   align-items: flex-start;
   border: 1px solid var(--line);
-  background: linear-gradient(110deg, #112b3b40, transparent);
+  background: var(--panel);
   padding: 34px;
   margin-top: 0;
 }
@@ -20,27 +21,27 @@
   max-width: 660px;
 }
 .achievement .eyebrow {
-  font-size: 9px;
+  font-size: var(--font-label);
   margin-bottom: 10px;
 }
 .achievement h3 {
-  font-size: 23px;
+  font-size: var(--font-heading);
   margin-bottom: 6px;
   font-weight: 550;
 }
 .award-source {
-  font: 11px/1.8 var(--mono);
-  color: #b3c0d6;
+  font: var(--font-small)/1.8 var(--sans);
+  color: #b5b5ba;
   margin-bottom: 15px;
 }
-.achievement-copy > p:last-child {
-  font-size: 14px;
+.achievement-copy > p:not([class]) {
+  font-size: var(--font-body);
   line-height: 1.8;
 }
 .award-year {
   margin-left: auto;
   font-size: 49px;
-  color: #2c4159;
+  color: #48484d;
   font-weight: 600;
   line-height: 1;
 }
@@ -52,9 +53,6 @@
   .award-year {
     display: none;
   }
-  .achievement h3 {
-    font-size: 20px;
-  }
 }
 @media (max-width: 600px) {
   .achievement {
@@ -65,16 +63,68 @@
     width: 29px;
   }
   .achievement .eyebrow {
-    font-size: 7px;
     letter-spacing: 0.5px;
   }
-  .achievement h3 {
-    font-size: 19px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .achievement.in-view:hover {
+    translate: 0 -2px;
+    border-color: #71d9c588;
+    box-shadow: 0 14px 32px #00000044;
   }
-  .award-source {
-    font-size: 9px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .achievement {
+    translate: none !important;
   }
-  .achievement-copy > p:last-child {
-    font-size: 13px;
+}
+
+.professional-development {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+.professional-development > div {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.professional-development h3 {
+  font-size: var(--font-heading);
+  margin-bottom: 10px;
+}
+.professional-development .eyebrow {
+  font-size: var(--font-label);
+  margin-bottom: 12px;
+}
+.professional-development p {
+  font-size: var(--font-small);
+  line-height: 1.85;
+}
+@media (max-width: 600px) {
+  .professional-development {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recognition-section .professional-development {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.recognition-section .achievement {
+  padding: 40px;
+  border-color: #ffffff0c;
+  border-radius: 24px;
+}
+.recognition-section .award-year {
+  color: #ffffff26;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .recognition-section .achievement {
+    padding: 24px 20px;
+    border-radius: 22px;
   }
 }

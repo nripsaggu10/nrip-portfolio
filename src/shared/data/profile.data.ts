@@ -6,5 +6,7 @@ export const profile = {
   phoneHref: "tel:+919988252405",
   github: "https://github.com/nripsaggu10",
   linkedin: "https://www.linkedin.com/in/nripdev-singh/",
-  resumeHref: "/resume.html",
+  instagram: "https://www.instagram.com/nrip.saggu/",
+  twitter: "https://x.com/nrip_saggu_914",
+  resumeHref: "/nripdev-singh-resume.pdf",
 };

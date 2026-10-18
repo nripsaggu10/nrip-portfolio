@@ -1,8 +1,6 @@
 import { useProjects } from "./useProjects";
 import ProjectCard from "./components/project-card/ProjectCard";
-import Toolbox from "./components/toolbox/Toolbox";
 import { projects } from "./projects.data";
-import Recognition from "./recognition/Recognition";
 import ProjectDialog from "./components/project-dialog/ProjectDialog";
 
 export default function Projects() {
@@ -16,7 +14,7 @@ export default function Projects() {
         aria-labelledby="projects-title"
       >
         <h2 className="section-title" id="projects-title">
-          <span>03.</span> Some things I’ve built <i aria-hidden="true" />
+          Independent projects <i aria-hidden="true" />
         </h2>
         {projects.map((project, index) => (
           <ProjectCard
@@ -26,8 +24,6 @@ export default function Projects() {
             onDetails={openProject(project)}
           />
         ))}
-        <Recognition />
-        <Toolbox />
       </section>
       {selectedProject && (
         <ProjectDialog
