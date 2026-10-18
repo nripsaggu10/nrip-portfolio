@@ -1,3 +1,4 @@
+import portrait from "../about/assets/nripdev-singh.jpg";
 import "./Hero.css";
 export default function Hero() {
   return (
@@ -15,6 +16,17 @@ export default function Hero() {
           it behaves under pressure, and how securely it operates.
         </p>
       </div>
+      <figure className="hero-portrait">
+        <img
+          className="identity-photo"
+          src={portrait}
+          alt="Nripdev Singh, software engineer"
+          width="386"
+          height="480"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </figure>
     </section>
   );
 }

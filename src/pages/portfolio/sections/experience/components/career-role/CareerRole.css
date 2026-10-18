@@ -7,7 +7,7 @@
   color: var(--mint);
 }
 .career-dates {
-  font: var(--font-small)/1.8 var(--mono);
+  font: var(--font-small)/1.8 var(--sans);
   margin-top: 12px;
 }
 .previous-role {
@@ -34,7 +34,7 @@
   border: 0;
   background: transparent;
   color: var(--mint);
-  font: var(--font-small)/1.7 var(--mono);
+  font: var(--font-small)/1.7 var(--sans);
   text-align: left;
   cursor: pointer;
 }

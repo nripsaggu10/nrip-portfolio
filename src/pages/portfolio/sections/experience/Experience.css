@@ -9,13 +9,14 @@
   align-self: start;
 }
 .experience-tabs button {
+  border-radius: 0 10px 10px 0;
   border: 0;
   border-left: 2px solid var(--line);
   background: transparent;
   color: var(--muted);
   padding: 16px 18px;
   text-align: left;
-  font: var(--font-control)/1.6 var(--mono);
+  font: var(--font-control)/1.6 var(--sans);
   cursor: pointer;
   transition:
     color 180ms ease,
@@ -25,7 +26,7 @@
 .experience-tabs button:hover,
 .experience-tabs button[aria-selected="true"] {
   color: var(--mint);
-  background: #13304380;
+  background: #ffffff0a;
 }
 .experience-tabs button[aria-selected="true"] {
   border-color: var(--mint);
@@ -68,5 +69,20 @@
 @media (prefers-reduced-motion: reduce) {
   .experience-tabs button {
     transition: none;
+  }
+}
+
+.experience-grid {
+  gap: clamp(28px, 4vw, 60px);
+}
+.experience-tabs button {
+  padding-block: 18px;
+}
+.experience-panels {
+  min-height: 380px;
+}
+@media (max-width: 600px) {
+  .experience-panels {
+    min-height: 0;
   }
 }

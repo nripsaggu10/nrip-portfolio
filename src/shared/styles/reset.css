@@ -3,7 +3,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 115px;
+  scroll-padding-top: 88px;
 }
 body {
   margin: 0;
@@ -13,10 +13,12 @@ body {
   font-size: var(--font-body);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
 }
 ::selection {
-  background: #244d59;
-  color: #e4fff8;
+  background: #27433c;
+  color: #f5f5f7;
 }
 a {
   color: inherit;
@@ -40,7 +42,7 @@ svg {
 }
 @media (max-width: 600px) {
   html {
-    scroll-padding-top: 95px;
+    scroll-padding-top: 84px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -4,10 +4,10 @@
   margin: auto;
 }
 .section {
-  padding: 110px 0;
+  padding: clamp(72px, 8vw, 128px) 0;
 }
 .eyebrow {
-  font: var(--font-label)/1.6 var(--mono);
+  font: var(--font-label)/1.6 var(--sans);
   letter-spacing: 1px;
   color: var(--mint);
 }
@@ -31,8 +31,8 @@
   color: var(--mint);
   background: transparent;
   padding: 19px 27px;
-  border-radius: 3px;
-  font: var(--font-control)/1.5 var(--mono);
+  border-radius: 999px;
+  font: var(--font-control)/1.5 var(--sans);
   transition:
     transform 0.2s,
     box-shadow 0.2s,
@@ -40,9 +40,9 @@
   min-height: 48px;
 }
 .button:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 4px 4px 0 var(--mint);
-  background: #112d3b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #00000033;
+  background: #252527;
 }
 .button-small {
   padding: 11px 17px;
@@ -59,13 +59,13 @@
   font-weight: 650;
 }
 .section-title > span {
-  font: var(--font-small) var(--mono);
+  font: var(--font-small) var(--sans);
   letter-spacing: 0;
   color: var(--mint);
   align-self: center;
 }
 .section-title i {
-  display: block;
+  display: none;
   height: 1px;
   max-width: 300px;
   flex: 1;
@@ -99,11 +99,11 @@
   margin: 25px 0 0;
 }
 .tag-list li {
-  font: var(--font-label) var(--mono);
+  font: var(--font-label) var(--sans);
   padding: 6px 11px;
-  border: 1px solid #2b3e56;
-  color: #acbbd5;
-  border-radius: 2px;
+  border: 1px solid #38383c;
+  color: #b5b5ba;
+  border-radius: 7px;
 }
 @media (min-width: 1600px) {
   .container {
@@ -189,10 +189,10 @@
   .tag-list li:hover {
     color: var(--mint);
     border-color: var(--mint);
-    background: #64ffda0d;
-    box-shadow: 0 6px 16px #020c1b44;
+    background: #71d9c50d;
+    box-shadow: 0 6px 16px #00000044;
     translate: 0 -3px;
-    animation: skill-bounce 400ms var(--ease-out);
+    animation: none;
   }
 }
 @keyframes skill-bounce {
@@ -200,7 +200,7 @@
     translate: 0 0;
   }
   55% {
-    translate: 0 -5px;
+    translate: 0 -3px;
   }
   80% {
     translate: 0 -2px;

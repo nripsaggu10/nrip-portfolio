@@ -1,9 +1,10 @@
 .achievement {
+  border-radius: 20px;
   display: flex;
   gap: 30px;
   align-items: flex-start;
   border: 1px solid var(--line);
-  background: linear-gradient(110deg, #112b3b40, transparent);
+  background: var(--panel);
   padding: 34px;
   margin-top: 0;
 }
@@ -29,8 +30,8 @@
   font-weight: 550;
 }
 .award-source {
-  font: var(--font-small)/1.8 var(--mono);
-  color: #b3c0d6;
+  font: var(--font-small)/1.8 var(--sans);
+  color: #b5b5ba;
   margin-bottom: 15px;
 }
 .achievement-copy > p:not([class]) {
@@ -40,7 +41,7 @@
 .award-year {
   margin-left: auto;
   font-size: 49px;
-  color: #2c4159;
+  color: #48484d;
   font-weight: 600;
   line-height: 1;
 }
@@ -68,9 +69,9 @@
 
 @media (hover: hover) and (pointer: fine) {
   .achievement.in-view:hover {
-    translate: 0 -4px;
-    border-color: #64ffda88;
-    box-shadow: 0 14px 32px #020c1b44;
+    translate: 0 -2px;
+    border-color: #71d9c588;
+    box-shadow: 0 14px 32px #00000044;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -110,4 +111,20 @@
 .recognition-section .professional-development {
   margin-top: 0;
   margin-bottom: 32px;
+}
+
+.recognition-section .achievement {
+  padding: 40px;
+  border-color: #ffffff0c;
+  border-radius: 24px;
+}
+.recognition-section .award-year {
+  color: #ffffff26;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .recognition-section .achievement {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
 }

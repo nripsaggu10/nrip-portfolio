@@ -1,4 +1,3 @@
-import portrait from "./assets/nripdev-singh.jpg";
 import "./About.css";
 import Reveal from "../../../../shared/components/reveal/Reveal";
 export default function About() {
@@ -48,21 +47,6 @@ export default function About() {
               <li>MySQL</li>
               <li>Linux</li>
             </ul>
-          </div>
-          <div className="identity-wrap">
-            <div className="identity-card">
-              <div className="identity-photo-frame">
-                <img
-                  className="identity-photo"
-                  src={portrait}
-                  alt="Nripdev Singh, software engineer"
-                  width="386"
-                  height="480"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
           </div>
         </Reveal>
       </section>

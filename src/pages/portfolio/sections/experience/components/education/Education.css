@@ -25,7 +25,7 @@
   align-self: center;
 }
 .education-meta p:first-child {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: var(--font-label);
   margin-bottom: 6px;
 }
@@ -56,8 +56,8 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .education-row:hover {
-    translate: 0 -4px;
-    border-color: #64ffda66;
+    translate: 0 -2px;
+    border-color: #71d9c566;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -116,4 +116,48 @@
 
 .coursework-list.tag-list {
   margin-top: 0;
+}
+
+.education-section .education-row {
+  padding: 34px;
+  border: 1px solid #ffffff0c;
+  border-radius: 24px;
+  background: var(--surface);
+}
+.education-row h3 {
+  font-weight: 600;
+  line-height: 1.35;
+  max-width: 28ch;
+}
+.education-row .eyebrow {
+  margin-bottom: 12px;
+}
+.education-details > p {
+  line-height: 1.8;
+}
+.education-meta {
+  line-height: 1.8;
+}
+.education-coursework {
+  max-width: none;
+  margin-top: 32px;
+}
+@media (max-width: 800px) {
+  .education-section .education-row {
+    flex-direction: column;
+    gap: 22px;
+  }
+  .education-meta {
+    align-self: flex-start;
+    text-align: left;
+  }
+}
+@media (max-width: 600px) {
+  .education-section .education-row {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+  .education-identity {
+    gap: 18px;
+  }
 }

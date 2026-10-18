@@ -1,34 +1,44 @@
 .toolbox-columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 20px;
 }
 .toolbox-columns > div {
-  border-top: 1px solid var(--line);
-  padding-top: 22px;
+  min-width: 0;
+  border: 1px solid #ffffff0a;
+  border-radius: 22px;
+  padding: 28px;
+  background: var(--surface);
 }
 .toolbox-columns h3 {
-  font-size: var(--font-heading);
-  margin-bottom: 16px;
+  font-size: clamp(1.125rem, 1rem + 0.3vw, 1.375rem);
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 .toolbox-columns p {
   font-size: var(--font-small);
-  line-height: 1.85;
-  margin-bottom: 12px;
+  line-height: 1.8;
   overflow-wrap: anywhere;
 }
-@media (max-width: 800px) {
+.expertise-skills.tag-list {
+  margin: 0 0 20px;
+  gap: 7px;
+}
+.expertise-skills.tag-list li {
+  border-color: #ffffff1a;
+}
+@media (max-width: 1000px) {
   .toolbox-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
   }
 }
 @media (max-width: 600px) {
   .toolbox-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
-}
-
-.expertise-skills.tag-list {
-  margin: 0 0 18px;
+  .toolbox-columns > div {
+    padding: 24px;
+  }
 }

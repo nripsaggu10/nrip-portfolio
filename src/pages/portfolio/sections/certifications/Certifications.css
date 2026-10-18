@@ -1,10 +1,11 @@
 .certification-card {
+  border-radius: 20px;
   display: flex;
   align-items: flex-start;
   gap: 30px;
   padding: 34px;
   border: 1px solid var(--line);
-  background: linear-gradient(110deg, #112b3b40, transparent);
+  background: var(--panel);
 }
 .certification-icon {
   width: 41px;
@@ -31,7 +32,7 @@
   margin-bottom: 8px;
 }
 .certification-score {
-  font: var(--font-small)/1.8 var(--mono);
+  font: var(--font-small)/1.8 var(--sans);
   color: var(--heading);
   margin-bottom: 15px;
 }
@@ -51,9 +52,9 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .certification-card.in-view:hover {
-    translate: 0 -4px;
-    border-color: #64ffda88;
-    box-shadow: 0 14px 32px #020c1b44;
+    translate: 0 -2px;
+    border-color: #71d9c588;
+    box-shadow: 0 14px 32px #00000044;
   }
 }
 @media (max-width: 800px) {
@@ -88,8 +89,66 @@
 }
 
 .certification-identifier {
-  font: var(--font-label)/1.8 var(--mono);
+  font: var(--font-label)/1.8 var(--sans);
   color: var(--muted);
   margin-top: 20px;
   overflow-wrap: anywhere;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.credentials-grid > .certification-card {
+  min-width: 0;
+  padding: 32px;
+  border-color: #ffffff0c;
+  border-radius: 24px;
+  gap: 24px;
+}
+.credentials-grid > .certification-card:first-child {
+  grid-column: 1 / -1;
+  padding: 44px;
+  gap: 32px;
+}
+.credentials-grid .certification-card + .certification-card {
+  margin-top: 0;
+}
+.credentials-grid .certification-copy {
+  max-width: 76ch;
+}
+.credentials-grid > .certification-card:not(:first-child) .issuer-logo {
+  flex-basis: 64px;
+  width: 64px;
+  height: 64px;
+}
+.credentials-grid h3 {
+  text-wrap: balance;
+}
+@media (max-width: 900px) {
+  .credentials-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .credentials-grid > .certification-card:first-child {
+    grid-column: auto;
+    padding: 32px;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .credentials-grid {
+    gap: 18px;
+  }
+  .credentials-grid > .certification-card,
+  .credentials-grid > .certification-card:first-child {
+    padding: 24px 20px;
+    gap: 18px;
+    border-radius: 22px;
+  }
+  .credentials-grid > .certification-card .issuer-logo {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
 }

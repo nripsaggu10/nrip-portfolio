@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font: var(--font-meta) var(--mono);
+  font: var(--font-meta) var(--sans);
   color: var(--muted);
 }
 .contact-email > a:hover {
@@ -48,7 +48,7 @@
   justify-content: center;
   gap: 27px;
   margin-top: 22px;
-  font: var(--font-control) var(--mono);
+  font: var(--font-control) var(--sans);
 }
 .contact-socials a {
   padding: 10px 0;
